@@ -1,4 +1,7 @@
 introduction
+motivation
+hate-crime
+our-proposal
 data-sources
 data-transformation
 fbi-uniform-crime-reporting-ucr

@@ -1,3 +1,32 @@
-# Data sources
+# Data Sources
 
-1. [FBI's Uniform Crime Reporting Program: Archives on Hate Crime](https://ucr.fbi.gov/hate-crime)
+For this project we have drawn data from multiple sources which have archives of the homicides over the last decade and are maintained by different wings of the US government's security agencies
+
+## UCR Hate Crime Data
+
+- Link: [FBI UCR](https://ucr.fbi.gov/hate-crime)
+- Overview: The data was segregated according to the hate crimes observed each year. Furthermore, for every annual report the data was split across 14 spreadsheets according to the following order
+
+```
+|-2019 (or any year)
+  |- Table 1: Record of incidents,offenses,victims and known offenders according to bias motivation
+  |- Table 2: Record of incidents,offenses,victims and known offenders according to offense type
+  |- Table 3: Record of offenses, known offender’s race and ethnicity according to offense Type
+  |- Table 4: Record of offenses, type of offense according to bias motivation
+  |- Table 5: Record of offenses, known offender’s race and ethnicity according to bias motivation
+  |- Table 6: Record of offenses, victim type according to type of offense
+  |- Table 7: Record of victims, types of offenses according to bias motivation
+  |- Table 8: Record of incidents, type of victim according to Bias Motivation
+  |- Table 9: Record of known offenders, known offender’s Race, ethnicity, and age
+  |- Table 10: Record of incidents, bias motivation according to location
+  |- Table 11: Record of offenses, type of offense according to state and fedral
+```
+
+## Gun Violence Data
+
+- Link: [Gun Violence Archive](https://www.gunviolencearchive.org/reports)
+- Overview: The data was segre
+
+## J
+
+1. [FBI's Uniform Crime Reporting Program: Archives on Hate Crime]()
