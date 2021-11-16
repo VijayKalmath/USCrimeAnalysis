@@ -1,6 +1,6 @@
 --- 
-title: "YOUR TITLE HERE"
-author: "YOUR NAMES HERE"
+title: "US Crime Statistics and Analysis"
+author: "Smaranjit Ghose, Soham Joshi, Vijay S Kalmath"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
