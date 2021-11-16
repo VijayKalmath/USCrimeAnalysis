@@ -2,6 +2,9 @@ introduction
 data-sources
 data-transformation
 missing-values
+jar-gender
+jar-race
+hate-crime-data
 results
 interactive-component
 conclusion

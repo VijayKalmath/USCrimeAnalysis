@@ -1,1 +1,41 @@
 # Missing values
+
+## JAR Gender 
+
+```{R}
+library(tidyverse)
+library(patchwork)
+
+source("plot_missing.R")
+
+df <- read.csv("/Users/vijaykalmath/Desktop/Columbia-Academics/Semester-1/GR5702_EDAV/Final_Project/USCrimeAnalysis/data/Juvenile_Gender_Records.csv")
+
+plot_missing(df,percent = FALSE)
+
+
+```
+
+
+## JAR Race 
+
+```{R}
+source("plot_missing.R")
+
+df <- read.csv("/Users/vijaykalmath/Desktop/Columbia-Academics/Semester-1/GR5702_EDAV/Final_Project/USCrimeAnalysis/data/Juvenile_Race_Records.csv")
+
+plot_missing(df,percent = FALSE)
+
+
+```
+
+## Hate Crime Data 
+
+```{R}
+
+df <- read.csv("/Users/vijaykalmath/Desktop/Columbia-Academics/Semester-1/GR5702_EDAV/Final_Project/USCrimeAnalysis/data/hate_crime.csv")
+
+plot_missing(df,percent = FALSE)
+
+
+```
+
