@@ -8,7 +8,7 @@ library(patchwork)
 
 source("plot_missing.R")
 
-df <- read.csv("/Users/vijaykalmath/Desktop/Columbia-Academics/Semester-1/GR5702_EDAV/Final_Project/USCrimeAnalysis/data/Juvenile_Gender_Records.csv")
+df <- read.csv("data/Juvenile_Gender_Records.csv")
 
 plot_missing(df,percent = FALSE)
 
@@ -21,7 +21,7 @@ plot_missing(df,percent = FALSE)
 ```{R}
 source("plot_missing.R")
 
-df <- read.csv("/Users/vijaykalmath/Desktop/Columbia-Academics/Semester-1/GR5702_EDAV/Final_Project/USCrimeAnalysis/data/Juvenile_Race_Records.csv")
+df <- read.csv("data/Juvenile_Race_Records.csv")
 
 plot_missing(df,percent = FALSE)
 
@@ -32,7 +32,7 @@ plot_missing(df,percent = FALSE)
 
 ```{R}
 
-df <- read.csv("/Users/vijaykalmath/Desktop/Columbia-Academics/Semester-1/GR5702_EDAV/Final_Project/USCrimeAnalysis/data/hate_crime.csv")
+df <- read.csv("data/hate_crime.csv")
 
 plot_missing(df,percent = FALSE)
 
