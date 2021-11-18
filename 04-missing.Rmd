@@ -5,6 +5,8 @@
 ```{R}
 library(tidyverse)
 library(patchwork)
+library(ggplot2)
+library(naniar)
 
 source("plot_missing.R")
 
@@ -14,8 +16,10 @@ plot_missing(df,percent = FALSE)
 
 
 ```
-
-
+```{R}
+gg_miss_upset(df)
+gg_miss_var(df, show_pct = TRUE)
+```
 ## JAR Race 
 
 ```{R}
@@ -28,6 +32,12 @@ plot_missing(df,percent = FALSE)
 
 ```
 
+```{R}
+gg_miss_upset(df)
+gg_miss_var(df, show_pct = TRUE)
+```
+
+
 ## Hate Crime Data 
 
 ```{R}
@@ -37,5 +47,18 @@ df <- read.csv("data/hate_crime.csv")
 plot_missing(df,percent = FALSE)
 
 
+```
+```{R}
+gg_miss_fct(x = df, fct = STATE_NAME) + labs(title = "NA")
+```
+
+```{R}
+gg_miss_fct(x = df, fct = VICTIM_TYPES) + labs(title = "NA")
+```
+
+
+
+```{R}
+gg_miss_upset(df)
 ```
 
