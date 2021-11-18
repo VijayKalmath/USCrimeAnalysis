@@ -179,3 +179,20 @@ df  %>%
   scale_fill_manual(values=c("skyblue3","gold"))+
   theme(axis.title.y=element_blank())
 ```
+
+
+d) Stacked Bar plot to represent proportion of missing data in each column
+
+
+```{r}
+df  %>%
+  summarise_all(list(~is.na(.)))%>%
+  pivot_longer(everything(),
+               names_to = "variables", values_to="missing") %>%
+  count(variables, missing) %>%
+  ggplot(aes(y=variables,x=n,fill=missing))+
+  geom_col(position = "fill")+
+  labs(x="Proportion")+
+  scale_fill_manual(values=c("skyblue3","gold"))+
+  theme(axis.title.y=element_blank())
+```
