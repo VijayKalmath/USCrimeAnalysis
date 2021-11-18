@@ -83,6 +83,9 @@ df  %>%
 
 ## JAR Race 
 
+a)
+
+
 ```{R}
 source("plot_missing.R")
 
@@ -96,6 +99,45 @@ plot_missing(df,percent = FALSE)
 ```{R}
 gg_miss_upset(df)
 gg_miss_var(df, show_pct = TRUE)
+```
+
+
+
+```{r}
+
+df %>% head()
+```
+
+
+
+c) Stacked Bar plot to represent the number of missing data in each column
+
+```{r}
+
+df  %>%
+ summarise_all(list(~is.na(.)))%>%
+  pivot_longer(everything(),
+               names_to = "variables", values_to="missing") %>%
+  count(variables, missing) %>%
+  ggplot(aes(y=variables,x=n,fill=missing))+
+  geom_col()+
+  scale_fill_manual(values=c("skyblue3","gold"))+
+  theme(axis.title.y=element_blank())
+```
+d) Stacked Bar plot to represent proportion of missing data in each column
+
+
+```{r}
+df  %>%
+  summarise_all(list(~is.na(.)))%>%
+  pivot_longer(everything(),
+               names_to = "variables", values_to="missing") %>%
+  count(variables, missing) %>%
+  ggplot(aes(y=variables,x=n,fill=missing))+
+  geom_col(position = "fill")+
+  labs(x="Proportion")+
+  scale_fill_manual(values=c("skyblue3","gold"))+
+  theme(axis.title.y=element_blank())
 ```
 
 
@@ -123,3 +165,17 @@ gg_miss_fct(x = df, fct = VICTIM_TYPES) + labs(title = "NA")
 gg_miss_upset(df)
 ```
 
+c) Stacked Bar plot to represent the number of missing data in each column
+
+```{r}
+
+df  %>%
+ summarise_all(list(~is.na(.)))%>%
+  pivot_longer(everything(),
+               names_to = "variables", values_to="missing") %>%
+  count(variables, missing) %>%
+  ggplot(aes(y=variables,x=n,fill=missing))+
+  geom_col()+
+  scale_fill_manual(values=c("skyblue3","gold"))+
+  theme(axis.title.y=element_blank())
+```
