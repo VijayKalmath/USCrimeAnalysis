@@ -3,7 +3,30 @@ title: "US Crime Analysis"
 author: "Smaranjit Ghose, Soham Joshi, Vijay S Kalmath"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
+github-repo: "VijayKalmath/USCrimeAnalysis"
+description: "A detaled analysis of crime in the United States"
+url: 'https://vijaykalmath.github.io/USCrimeAnalysis/'
+cover-image: "./assets/cover.png"
+favicon: "./assets/favicon.ico"
+apple-touch-icon: "./assets/apple-touch-icon.png"
+apple-touch-icon-size: 120
+
+
 ---
+
+
+
+
+
+
+
+
+
+
+---
+
+
+
 
 # Introduction
 
