@@ -10,20 +10,10 @@ cover-image: "./assets/cover.png"
 favicon: "./assets/favicon.ico"
 apple-touch-icon: "./assets/apple-touch-icon.png"
 apple-touch-icon-size: 120
-
-
 ---
 
 
 
-
-
-
-
-
-
-
----
 
 
 
