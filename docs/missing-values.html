@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Chapter 4 Missing values | US Crime Statistics and Analysis</title>
-  <meta name="description" content="Chapter 4 Missing values | US Crime Statistics and Analysis" />
+  <title>Chapter 4 Missing values | US Crime Analysis</title>
+  <meta name="description" content="Chapter 4 Missing values | US Crime Analysis" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Chapter 4 Missing values | US Crime Statistics and Analysis" />
+  <meta property="og:title" content="Chapter 4 Missing values | US Crime Analysis" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Chapter 4 Missing values | US Crime Statistics and Analysis" />
+  <meta name="twitter:title" content="Chapter 4 Missing values | US Crime Analysis" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Smaranjit Ghose, Soham Joshi, Vijay S Kalmath" />
 
 
-<meta name="date" content="2021-11-16" />
+<meta name="date" content="2021-11-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -78,9 +78,9 @@
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing values</a>
 <ul>
-<li class="chapter" data-level="4.0.1" data-path="missing-values.html"><a href="missing-values.html#jar-gender"><i class="fa fa-check"></i><b>4.0.1</b> JAR Gender</a></li>
-<li class="chapter" data-level="4.0.2" data-path="missing-values.html"><a href="missing-values.html#jar-race"><i class="fa fa-check"></i><b>4.0.2</b> JAR Race</a></li>
-<li class="chapter" data-level="4.0.3" data-path="missing-values.html"><a href="missing-values.html#hate-crime-data"><i class="fa fa-check"></i><b>4.0.3</b> Hate Crime Data</a></li>
+<li class="chapter" data-level="4.1" data-path="missing-values.html"><a href="missing-values.html#jar-gender"><i class="fa fa-check"></i><b>4.1</b> JAR Gender</a></li>
+<li class="chapter" data-level="4.2" data-path="missing-values.html"><a href="missing-values.html#jar-race"><i class="fa fa-check"></i><b>4.2</b> JAR Race</a></li>
+<li class="chapter" data-level="4.3" data-path="missing-values.html"><a href="missing-values.html#hate-crime-data"><i class="fa fa-check"></i><b>4.3</b> Hate Crime Data</a></li>
 </ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
@@ -96,7 +96,7 @@
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">US Crime Statistics and Analysis</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">US Crime Analysis</a>
           </h1>
         </div>
 
@@ -106,17 +106,308 @@
             <section class="normal" id="section-">
 <div id="missing-values" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Missing values</h1>
-<div id="jar-gender" class="section level3" number="4.0.1">
-<h3><span class="header-section-number">4.0.1</span> JAR Gender</h3>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<div id="jar-gender" class="section level2" number="4.1">
+<h2><span class="header-section-number">4.1</span> JAR Gender</h2>
+<ol style="list-style-type: lower-alpha">
+<li><p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p></li>
+<li></li>
+</ol>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<pre><code>##                            ï..Offense Gender   X1980   X1981   X1982  X1983
+## 1                          All crimes   Male 10320.8 10244.1 10582.5 9654.4
+## 2 Murder and nonneglient manslaughter   Male    10.5    11.8    11.0    8.9
+## 3                      Forcible rape*   Male    28.7    29.3    31.2   32.1
+## 4                             Robbery   Male   264.4   266.5   251.0  236.9
+## 5                  Aggravated assault   Male   215.2   212.5   219.9  209.6
+## 6                            Burglary   Male  1336.3  1297.6  1252.1 1113.4
+##    X1984   X1985   X1986   X1987   X1988   X1989   X1990   X1991   X1992
+## 1 9663.5 10194.7 10615.1 10661.7 11440.5 11554.4 11321.5 11679.6 11372.0
+## 2    8.2     9.5    10.8    11.4    15.5    17.9    21.2    22.1    20.8
+## 3   36.9    37.6    38.9    38.2    38.0    41.4    40.3    42.8    40.9
+## 4  222.7   222.1   217.0   200.8   210.8   245.8   259.2   282.3   283.7
+## 5  216.8   239.8   260.3   260.7   310.9   360.5   385.1   397.9   419.0
+## 6 1004.2  1062.2  1028.8   997.5   988.8   962.6   908.2   919.9   880.4
+##     X1993   X1994   X1995   X1996   X1997   X1998  X1999  X2000  X2001  X2002
+## 1 11570.5 12440.4 12475.4 12686.6 12172.6 10911.8 9884.2 9415.2 8905.6 8849.9
+## 2    23.5    22.5    19.5    16.2    13.9    11.6    7.8    6.2    6.6    6.9
+## 3    40.8    37.6    34.8    34.2    32.5    31.2   28.0   25.8   26.0   25.9
+## 4   297.2   324.6   321.5   281.6   223.9   187.4  161.4  147.7  140.9  129.4
+## 5   431.1   447.2   430.7   379.9   370.1   339.7  315.7  295.7  287.0  269.5
+## 6   825.2   835.1   780.0   755.2   708.6   616.7  516.0  490.1  454.8  435.9
+##    X2003  X2004  X2005  X2006  X2007  X2008  X2009  X2010  X2011  X2012
+## 1 8619.7 8392.4 8302.4 8597.0 8397.6 8142.1 7389.1 6702.2 6037.1 5460.7
+## 2    6.4    5.7    6.5    6.8    7.0    6.7    6.3    5.3    4.5    3.9
+## 3   23.3   23.2   22.1   20.0   20.0   18.7   17.6   16.2   16.0   14.6
+## 4  131.8  130.4  149.2  178.9  176.6  183.6  164.8  142.2  126.1  113.4
+## 5  263.5  259.0  262.2  260.9  247.9  243.2  215.5  193.9  176.6  156.6
+## 6  420.5  404.4  390.7  417.6  408.7  419.7  380.3  332.6  317.4  277.2
+##   X2.013.0 X2.014.0 X2.015.0 X2.016.0 X2.017.0 X2.018.0 X2.019.0
+## 1  4,507.5  4,265.9  3,809.4  3,521.4  3,347.4  2,986.0  2,833.5
+## 2      3.9      4.1      4.3      4.5      4.9      4.8      4.5
+## 3     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;     &lt;NA&gt;
+## 4    102.2    103.3     97.4    100.9    101.5     89.9     83.6
+## 5    133.6    132.1    124.2    121.4    120.7    117.8    116.3
+## 6    222.9    209.7    180.5    164.8    158.5    112.9    104.1</code></pre>
+<pre><code>##    ï..Offense Gender X1980 X1981 X1982 X1983 X1984 X1985 X1986 X1987 X1988
+## 1       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 2       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 3       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 4       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 5       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 6       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 7       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 8       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 9       FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 10      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 11      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 12      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 13      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 14      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 15      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 16      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 17      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 18      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 19      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 20      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 21      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 22      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 23      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 24      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 25      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 26      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 27      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 28      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 29      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 30      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 31      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 32      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 33      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 34      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 35      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 36      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 37      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 38      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 39      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 40      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 41      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 42      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 43      FALSE  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##    X1989 X1990 X1991 X1992 X1993 X1994 X1995 X1996 X1997 X1998 X1999 X2000
+## 1  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 2  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 3  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 4  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 5  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 6  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 7  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 8  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 9  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 10 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 11 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 12 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 13 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 14 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 15 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 16 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 17 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 18 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 19 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 20 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 21 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 22 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 23 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 24 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 25 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 26 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 27 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 28 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 29 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 30 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 31 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 32 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 33 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 34 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 35 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 36 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 37 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 38 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 39 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 40 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 41 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 42 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 43 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##    X2001 X2002 X2003 X2004 X2005 X2006 X2007 X2008 X2009 X2010 X2011 X2012
+## 1  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 2  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 3  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 4  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 5  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 6  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 7  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 8  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 9  FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 10 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 11 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 12 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 13 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 14 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 15 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 16 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 17 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 18 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 19 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+## 20 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 21 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 22 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 23 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 24 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 25 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 26 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 27 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 28 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 29 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 30 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 31 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 32 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 33 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 34 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 35 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 36 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 37 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 38 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 39 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 40 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 41 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE  TRUE  TRUE  TRUE
+## 42 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+## 43 FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE FALSE
+##    X2.013.0 X2.014.0 X2.015.0 X2.016.0 X2.017.0 X2.018.0 X2.019.0
+## 1     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 2     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 3      TRUE     TRUE     TRUE     TRUE     TRUE     TRUE     TRUE
+## 4     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 5     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 6     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 7     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 8     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 9     FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 10    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 11    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 12    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 13    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 14    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 15    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 16    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 17    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 18    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 19     TRUE     TRUE     TRUE     TRUE     TRUE     TRUE     TRUE
+## 20    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 21    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 22    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 23    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 24    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 25     TRUE     TRUE     TRUE     TRUE     TRUE     TRUE     TRUE
+## 26    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 27    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 28    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 29    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 30    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 31    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 32    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 33    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 34    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 35    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 36    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 37    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 38    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 39    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 40    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 41     TRUE     TRUE     TRUE     TRUE     TRUE     TRUE     TRUE
+## 42    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE
+## 43    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE    FALSE</code></pre>
+<pre><code>## # A tibble: 52 x 3
+##    variables  missing     n
+##    &lt;chr&gt;      &lt;lgl&gt;   &lt;int&gt;
+##  1 Gender     FALSE      43
+##  2 ï..Offense FALSE      43
+##  3 X1980      FALSE      43
+##  4 X1981      FALSE      43
+##  5 X1982      FALSE      43
+##  6 X1983      FALSE      43
+##  7 X1984      FALSE      43
+##  8 X1985      FALSE      43
+##  9 X1986      FALSE      43
+## 10 X1987      FALSE      43
+## # ... with 42 more rows</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Stacked Bar plot to represent the number of missing data in each column</li>
+</ol>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-10-1.png" width="672" />
+d) Stacked Bar plot to represent proportion of missing data in each column</p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
 </div>
-<div id="jar-race" class="section level3" number="4.0.2">
-<h3><span class="header-section-number">4.0.2</span> JAR Race</h3>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<div id="jar-race" class="section level2" number="4.2">
+<h2><span class="header-section-number">4.2</span> JAR Race</h2>
+<ol style="list-style-type: lower-alpha">
+<li></li>
+</ol>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-13-1.png" width="672" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-13-2.png" width="672" /></p>
+<pre><code>##                            ï..Offense  Race  X1980  X1981  X1982  X1983  X1984
+## 1                          All crimes White 6051.4 5818.5 5995.2 5563.0 5657.5
+## 2 Murder and nonneglient manslaughter White    4.0    3.9    3.6    3.2    3.0
+## 3                      Forcible rape* White    7.9    7.8    8.6    8.9   10.8
+## 4                             Robbery White   58.5   55.1   54.2   48.1   44.6
+## 5                  Aggravated assault White  102.1   98.6  102.1   96.5   98.1
+## 6                            Burglary White  664.8  639.9  620.5  562.4  523.4
+##    X1985  X1986  X1987  X1988  X1989  X1990  X1991  X1992  X1993  X1994  X1995
+## 1 6022.9 6255.5 6268.5 6615.4 6599.1 6567.2 6724.1 6438.8 6563.9 7183.3 7247.4
+## 2    3.2    3.6    3.5    4.5    4.7    5.7    6.0    5.8    5.8    6.1    5.4
+## 3   11.8   11.5   11.1   12.3   14.1   14.0   15.8   14.7   15.2   14.3   12.7
+## 4   48.0   47.6   43.4   48.5   58.0   64.2   74.6   75.4   76.9   85.5   86.7
+## 5  106.3  112.5  109.9  127.2  148.8  163.8  176.5  183.6  190.7  201.5  198.1
+## 6  559.5  541.8  529.7  527.0  524.2  494.3  507.6  481.3  450.0  454.0  420.7
+##    X1996  X1997  X1998  X1999  X2000  X2001  X2002  X2003  X2004  X2005  X2006
+## 1 7649.3 7426.7 6784.5 6213.2 5993.6 5665.1 5732.0 5521.3 5420.8 5197.8 5371.8
+## 2    4.6    4.0    3.9    2.5    2.1    2.1    2.3    2.2    1.9    2.0    1.9
+## 3   13.1   12.6   12.6   11.9   10.8   10.5   11.0    9.9   10.1    9.7    8.8
+## 4   81.3   64.3   54.9   45.8   41.7   38.3   35.0   33.1   32.8   33.3   40.6
+## 5  185.3  184.2  175.7  166.2  155.7  152.9  142.0  135.8  132.8  130.2  128.8
+## 6  417.4  387.8  341.4  281.4  270.5  251.4  235.4  226.7  215.3  199.3  211.4
+##    X2007  X2008  X2009  X2010  X2011  X2012 X2.013.00 X2.014.00 X2.015.00
+## 1 5270.3 5123.6 4644.2 4243.0 3787.4 3362.8  2,706.50  2,549.00  2,302.60
+## 2    2.1    1.9    1.8    1.7    1.5    1.3       1.1       1.3       1.2
+## 3    8.5    8.0    7.8    7.0    7.0    6.4      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+## 4   40.0   42.0   38.1   33.2   28.0   24.6      20.6      20.9      21.8
+## 5  124.7  120.5  107.8   98.7   89.0   78.8      66.5      66.2      63.3
+## 6  204.1  203.4  177.2  157.1  145.4  124.7      98.2      90.3        79
+##   X2.016.00 X2.017.00 X2.018.00 X2.019.00
+## 1  2,112.70  1,981.50  1,793.40  1,748.30
+## 2       1.2       1.4       1.5       1.6
+## 3      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;      &lt;NA&gt;
+## 4      22.3      24.4      23.2      23.2
+## 5      60.6      60.7      61.7      61.1
+## 6      70.2      68.7      48.7        47</code></pre>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Stacked Bar plot to represent the number of missing data in each column</li>
+</ol>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-15-1.png" width="672" />
+d) Stacked Bar plot to represent proportion of missing data in each column</p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-16-1.png" width="672" /></p>
 </div>
-<div id="hate-crime-data" class="section level3" number="4.0.3">
-<h3><span class="header-section-number">4.0.3</span> Hate Crime Data</h3>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<div id="hate-crime-data" class="section level2" number="4.3">
+<h2><span class="header-section-number">4.3</span> Hate Crime Data</h2>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-17-1.png" width="672" />
+<img src="us_crime_analysis_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-20-1.png" width="672" /></p>
+<ol start="3" style="list-style-type: lower-alpha">
+<li>Stacked Bar plot to represent the number of missing data in each column</li>
+</ol>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-21-1.png" width="672" /></p>
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Stacked Bar plot to represent proportion of missing data in each column</li>
+</ol>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-22-1.png" width="672" /></p>
 
 </div>
 </div>

@@ -1,5 +1,5 @@
 --- 
-title: "US Crime Statistics and Analysis"
+title: "US Crime Analysis"
 author: "Smaranjit Ghose, Soham Joshi, Vijay S Kalmath"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site

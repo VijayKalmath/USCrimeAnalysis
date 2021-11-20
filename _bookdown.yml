@@ -1,4 +1,5 @@
-book_filename: "finalproj"
+book_filename: "us_crime_analysis"
+# The output_dir is set to a docs directory for easy fetching of html in github pages
 output_dir: docs
 delete_merged_file: true
 edit: https://github.com/VijayKalmath/USCrimeAnalysis/edit/main/%s
