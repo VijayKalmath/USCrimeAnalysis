@@ -7,3 +7,4 @@ site: bookdown::bookdown_site
 
 # Introduction
 
+In this project, we aim to analyze data related to crime in the United States while focusing on various aspects such as age,sex,race of offenders and victims, correlation between crime rate rise/fall and parallel political/social events and a deep dive into the current situation of public safety across the nation. The aim of the project is to draw insights that mighht be useful for drafting of policies regarding public safety or taking measures to prevent homicides as a whole.
