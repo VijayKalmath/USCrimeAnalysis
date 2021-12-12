@@ -64,3 +64,17 @@ df1 %>%
 
 Similarly we also aggregate the other data for the other sources.
 
+## Gun Violence Data
+
+### Mass Shootings
+For the Gun violence data, we had a consolidated data set for years 2018-2021 and separate data for every year from 2014 to 2017. We combine this data according to years
+```{R}
+df1 <- read_csv("data/processed/GVA/MassShootingTotalYears.csv",show_col_types = FALSE)
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+
+
