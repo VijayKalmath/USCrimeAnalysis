@@ -6,14 +6,30 @@ In this project, we aim to analyze data related to crime in the United States wh
 
 **Check out the live version:** [Click Here](https://vijaykalmath.github.io/USCrimeAnalysis/)
 
-## Planned Work 🏗️:
+## Goals:
 
+- [x] Scrape the data from the approprite souces
+- [x] Clean, pre-process and transform the data as per requirements
+- [ ] Deal with missing values
 - [ ] Detailed fundamental analysis of each of the datasets. Answer questions like how many datapoints are we considering for drawing a particular inference? Is there any missing values? What is the structure of the data? Can there be any possible bias related to the source or the conditions under which it was collected?
 - [ ] Categorical analysis of homicides: stabbing, molestation and sexual offences, gun violence, robbery, etc
 - [ ] Demographic, Racial and Gender analysis of homicides
 - [ ] Compare and contrast homicides by minors
 - [ ] Draw correlation between social/political events and rise/fall in crime rate
+- [ ] Interactive Component using D3.js
 - [ ] Final Conclusions
+
+## Planned Work 🏗️:
+
+- [ ] Annual Number of hate crimes commited in each state
+- [ ] Annual Number of hate crimes commited in common locations
+- [ ] Annual Number of hate crimes commited by adults and minors
+- [ ] Annual Number of hate crimes commited according to type of offense
+- [ ] Annual Number of hate crimes commited according to a particular category of bias
+  - [ ] Annual Number of hate crimes committed according to bias towards a particular religion
+  - [ ] Annual Number of hate crimes committed according to bias towards a particular race/ethnicity
+  - [ ] Annual Number of hate crimes commited according to bias towards a particular gender
+  - [ ] Annual Number of hate crimes commited according to bias towards a particular sexual orientation
 
 ## References and Data Sources🔎:
 
