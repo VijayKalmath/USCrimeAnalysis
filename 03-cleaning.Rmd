@@ -23,7 +23,7 @@ For every year from 2010 - 2019, the source had a set of all tables with the fol
 Through these 6 tables we extract enough information to comment about certain trends of crime in the country based on geographic location, demographics of the offenders and demographics of the offenses. Since all the data is distributed over 10 years, we can also compare changes to important events.
 
 ### Hate Crime by Bias
-We use the Incidents, Offense, Victims and Known Offenders by Bias Motivation data from 2010 to 2019. Since the two main statistics are the number of incidents and number of victims we only consider those over 10 years. 
+We use the Incidents, Offense, Victims and Known Offenders by Bias Motivation data from 2010 to 2019. Since the two main statistics are the number of incidents and number of victims we only consider those over 10 years. We now get long form data structure with Bias type, Incidents, Victims and Year
 
 ```{R}
 df <- read_csv("data/processed/FBI-UCR/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
