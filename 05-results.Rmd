@@ -23,7 +23,7 @@ df <- read_csv("data/processed/ucr/annual_hc_count_by_place.csv",show_col_types 
 df$min <- apply(df[2:11], MARGIN =  1, FUN = min, na.rm = T)
 df$max <- apply(df[2:11], MARGIN =  1, FUN = max, na.rm = T)
 #df$Total <- rowSums(df[ , c(2,3,4,5,6,7,8,9,10,11)], na.rm=TRUE)
-filter(df, Place != "Other/unknown") %>% mutate(Place = fct_reorder(Place, min, .desc = FALSE)) %>% ggplot() +  geom_point(aes(min, Place, color = "Min")) + 
+filter(df, Place != "Other/unknown") %>% mutate(Place = fct_reorder(Place, max, .desc = FALSE)) %>% ggplot() +  geom_point(aes(min, Place, color = "Min")) + 
   geom_point(aes(max, Place, color = "Max")) +
   theme(plot.title = element_text(hjust = 0.5), axis.line = element_line(colour = "black"))+
   xlab('Counts') + 
