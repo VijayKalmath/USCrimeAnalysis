@@ -1,3 +1,80 @@
+--- 
+title: "US Crime Analysis"
+author: "Smaranjit Ghose, Soham Joshi, Vijay S Kalmath"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+github-repo: "VijayKalmath/USCrimeAnalysis"
+description: "A detaled analysis of crime in the United States"
+url: 'https://vijaykalmath.github.io/USCrimeAnalysis/'
+cover-image: "./assets/cover.png"
+favicon: "./assets/favicon.ico"
+apple-touch-icon: "./assets/apple-touch-icon.png"
+apple-touch-icon-size: 120
+---
+--- 
+title: "US Crime Analysis"
+author: "Smaranjit Ghose, Soham Joshi, Vijay S Kalmath"
+date: "`r Sys.Date()`"
+site: bookdown::bookdown_site
+github-repo: "VijayKalmath/USCrimeAnalysis"
+description: "A detaled analysis of crime in the United States"
+url: 'https://vijaykalmath.github.io/USCrimeAnalysis/'
+cover-image: "./assets/cover.png"
+favicon: "./assets/favicon.ico"
+apple-touch-icon: "./assets/apple-touch-icon.png"
+apple-touch-icon-size: 120
+---
+```{r include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+
+
+
+
+
+
+
+# Introduction
+
+In this project, we aim to analyze data related to crime in the United States while focusing on various aspects such as age,sex,race of offenders and victims, correlation between crime rate rise/fall and parallel political/social events and a deep dive into the current situation of public safety across the nation. The aim of the project is to draw insights that might be useful for drafting of policies regarding public safety or taking measures to prevent homicides as a whole.
+
+<!--chapter:end:index.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+# Data sources
+
+1. [FBI's Uniform Crime Reporting Program: Archives on Hate Crime](https://ucr.fbi.gov/hate-crime)
+
+<!--chapter:end:02-data.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+# Data transformation
+
+<!--chapter:end:03-cleaning.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
 # Missing Values
 
 ```{r}
@@ -257,3 +334,42 @@ df3  %>%
   scale_fill_manual(values=c("skyblue3","gold"))+
   theme(axis.title.y=element_blank())
 ```
+
+<!--chapter:end:04-missing.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+# Results
+
+<!--chapter:end:05-results.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+# Interactive component
+
+
+
+<!--chapter:end:06-interactive.Rmd-->
+
+```{r include=FALSE, cache=FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  message = FALSE,
+  warning = FALSE
+)
+```
+# Conclusion
+
+
+<!--chapter:end:07-conclusion.Rmd-->
+
