@@ -15,3 +15,7 @@ missing-data-in-juvenile-arrest-records
 missing-data-in-gun-violence-archive
 missing-data-in-hate-crime-data
 hate-crime-by-state
+gun-violence-data
+mass-shootings
+accidental-deaths-and-injuries
+juvenile-arrest-records-jar

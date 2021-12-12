@@ -30,7 +30,7 @@ df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df %>%
   kable(escape = F) %>% 
   kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  scroll_box(width = "900px", height = "300px") 
 ```
 
 ### Hate Crime by Offense Type
@@ -41,7 +41,7 @@ Incidents: Crime and Years
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
 df %>%
   kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = T) %>% 
   scroll_box(width = "500px", height = "300px") 
 ```
 Victims: Crime and Years
@@ -97,4 +97,31 @@ df1 %>%
   scroll_box(width = "500px", height = "300px") 
 ```
 
+## Juvenile Arrest Records (JAR)
+The JAR data set is a combined file of collated Juvenile arrest records by different aspects of race gender for years 1980 - 2019. We split this data according to gender and race. Due to the volume of the data we restrict our time frame to years 2000 - 2019.
+
+Split by Gender:
+```{R}
+source("R_Scripts/readJar.R")
+JuvenileList = readJar()
+
+df1 = data.frame(JuvenileList[2])
+
+
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+Split by Race:
+```{R}
+
+
+df1 = data.frame(JuvenileList[3])
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
 
