@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 def main():
     # Fetch File Paths
-    file_paths = glob.glob('./data/raw/ucr/offender_count_by_age/*.xls')
+    file_paths = glob.glob(r'./data/raw/offender_count_by_age/*.xls')
     # Sort them according to year
     file_paths.sort(key = lambda x: int(x[-8:-4]))
     # Create a dataframe to store the result and initialize it with the values for the first year
@@ -18,8 +18,7 @@ def main():
         df_temp = get_offender_count_by_age(p)
         df_res = pd.merge(df_res,df_temp,how="left",on=["Age Category"])
     # Save the result to disk
-    df_res.to_csv("./data/processed/annual_offenders_by_age.csv",index=False)
-
+    df_res.to_csv("./data/processed/annual_offenders_by_age.csv")
 
 
 def get_offender_count_by_age(path:str)->pd.DataFrame:
