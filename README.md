@@ -21,6 +21,11 @@ In this project, we aim to analyze data related to crime in the United States wh
 
 ## Planned Work 🏗️:
 
+- [ ] Introduction
+- [ ] Motivation
+- [ ] Data Sources
+- [ ] Data Cleaning
+- [ ] Missing Values
 - [ ] Annual Number of hate crimes commited in each state
 - [ ] Annual Number of hate crimes commited in common locations
 - [ ] Annual Number of hate crimes commited by adults and minors
