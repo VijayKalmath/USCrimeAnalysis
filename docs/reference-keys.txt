@@ -20,3 +20,6 @@ hc-by-age
 results
 interactive-component
 conclusion
+motivation
+hate-crime
+our-proposal

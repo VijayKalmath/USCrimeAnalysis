@@ -52,3 +52,16 @@ df2 %>%
 
 ```
 
+
+```{r}
+df <- read_csv("data/processed/ucr/annual_offenders_by_age.csv",show_col_types = FALSE)
+df2 <- subset(df,select = -c(2,3,4))
+df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year") 
+df2
+ggplot(df2, aes(x = Year, fill = `Age Category`,
+                 y = ifelse(test = `Age Category` == "Total known offenders under 18",
+                            yes = -Incidents, no = Incidents))) + 
+  geom_bar(stat = "identity") +
+  scale_y_continuous(labels = abs, limits = max(df2$Incidents) * c(-1,1)) +
+  coord_flip()
+```
