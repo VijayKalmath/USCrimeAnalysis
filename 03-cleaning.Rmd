@@ -26,8 +26,8 @@ Through these 6 tables we extract enough information to comment about certain tr
 We use the Incidents, Offense, Victims and Known Offenders by Bias Motivation data from 2010 to 2019. Since the two main statistics are the number of incidents and number of victims we only consider those over 10 years. 
 
 ```{R}
-df <- read_csv("data/processed/FBI-UCR/FBI_UCR_TABLE1.csv")
+df <- read_csv("data/processed/FBI-UCR/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df %>%
   kbl() %>%
-  kable_material(c("striped", "hover"))
+  kable_material_dark()
 ```
