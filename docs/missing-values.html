@@ -53,6 +53,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 
@@ -131,35 +133,35 @@
 <h2><span class="header-section-number">4.1</span> Missing Data in Juvenile Arrest Records</h2>
 <p>An Upset plot can be used to visualize the number of times certain variables are missing together with the other variables. This gives the combinations of variables which are missing. The vertical bar shows the intersection values of missing elements in the set. The horizontal bars show the set size of missing values in each variable.
 In this particular graph, the variables are years. The only variables which have missing values are years from 2010 through 2019. From the size of the set we can see that years 2013 - 2019 have equal number of missing values. 2010-2012 however, have fewer missing value. Hence we can see that there are two sets of overlaps. The height of the vertical bar shows the amount of missing data. We can see that there are 2 categories of crime which have missing data from 2013-2019 (left bar), and two categories of crime which have missing data from 2010-2019.</p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-17-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>We can also look at the what percentage of values are missing from every variable. Unlike overlap, this gives us the absolute estimate of how much data we have missed. We can see that years 2013 to 2019 have the same amount of data missing as we concluded from the previous plot. Here we can see that it is little over 9% missing values of data per variable. Similarly, years 2010-2012 the percentage missing is even less.</p>
 <p>We plot the upset plot and the percentage missing values plot for the Juvenile Race records as well. We can see a similar trend in missing values in this. We can thus conclude that there is a gap in our data for 4 types of crimes and it is consistent throughout all classifications.</p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-7-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-18-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="missing-data-in-gun-violence-archive" class="section level2" number="4.2">
 <h2><span class="header-section-number">4.2</span> Missing Data in Gun Violence Archive</h2>
 <p>Stacked Bar plot to represent proportion of missing data in each column</p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-9-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-20-1.png" width="768" style="display: block; margin: auto;" /></p>
 <p>Missing Plot Matrix for GVA Data</p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-10-1.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-21-1.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="missing-data-in-hate-crime-data" class="section level2" number="4.3">
 <h2><span class="header-section-number">4.3</span> Missing Data in Hate Crime Data</h2>
 <div id="hc-by-offense" class="section level3" number="4.3.1">
 <h3><span class="header-section-number">4.3.1</span> HC by Offense</h3>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-12-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-12-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-23-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-23-2.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hc-by-state" class="section level3" number="4.3.2">
 <h3><span class="header-section-number">4.3.2</span> HC by State</h3>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-13-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-13-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-24-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-24-2.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hc-by-place" class="section level3" number="4.3.3">
 <h3><span class="header-section-number">4.3.3</span> HC by Place</h3>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-14-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-14-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-25-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-25-2.png" width="768" style="display: block; margin: auto;" /></p>
 </div>
 <div id="hc-by-age" class="section level3" number="4.3.4">
 <h3><span class="header-section-number">4.3.4</span> HC by Age</h3>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-15-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-15-2.png" width="768" style="display: block; margin: auto;" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-26-1.png" width="768" style="display: block; margin: auto;" /><img src="us_crime_analysis_files/figure-html/unnamed-chunk-26-2.png" width="768" style="display: block; margin: auto;" /></p>
 
 </div>
 </div>
