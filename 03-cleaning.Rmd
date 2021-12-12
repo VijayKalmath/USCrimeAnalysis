@@ -1,1 +1,20 @@
 # Data transformation
+
+## FBI: Uniform Crime Reporting (UCR)
+
+The UCR data set consisted of year wise data of crime counts. The data was reported with respect to various parameters such as the cause of the crime, type of crime and also various demographics of victims and offenders. This was consolidated over 14 tables depending on the parameters. We selected 7 out of the 10 tables to analyse and visualise the crimes in the country during 2010-2019.
+
+
+
+```{R}
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
+
+source("")
+
+df <- read.csv("")
+
+plot_missing(df,percent = FALSE)
+
+```
