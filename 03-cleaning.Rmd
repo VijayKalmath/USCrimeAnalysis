@@ -76,5 +76,25 @@ df1 %>%
   scroll_box(width = "500px", height = "300px") 
 ```
 
+### Accidental Deaths and Injuries
+We combine 3 data sets which have counts corresponding to Children, Teens and Adults as follows:
+
+Accidental deaths:
+```{R}
+df1 <- read_csv("data/processed/GVA/Accidental_DeathsAll.csv",show_col_types = FALSE)
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+Accidental Injuries:
+```{R}
+df1 <- read_csv("data/processed/GVA/Accidental_InjuriesAll.csv",show_col_types = FALSE)
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
 
 
