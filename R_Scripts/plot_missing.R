@@ -42,7 +42,7 @@ plot_missing <- function(dataset, percent) {
     xlab("variable") + 
     annotate("text", x = Text_x_Cord,y = Text_y_Cord,alpha = 1.2,label="Complete Cases") +
     annotate("rect", xmin = 0.5, xmax = Rect_x_Cord, ymin = Text_y_Cord - 0.5 , ymax=Text_y_Cord + 0.5, alpha=0.1) + 
-    theme(legend.position = "None")
+    theme(legend.position = "None" ,   axis.text.x = element_text(angle=25))
   
   
   
@@ -55,7 +55,8 @@ plot_missing <- function(dataset, percent) {
       xlab("") +
       theme_bw() +
       theme (
-        panel.grid.major.x = element_blank()
+        panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(angle=25)
       )
   } else {
     count_plot <- ggplot(y %>% distinct(Key,KeyCount)) +
@@ -65,7 +66,8 @@ plot_missing <- function(dataset, percent) {
       xlab("") +
       theme_bw() +
       theme (
-        panel.grid.major.x = element_blank()
+        panel.grid.major.x = element_blank(),
+        axis.text.x = element_text(angle=25)
       )
   }
   
@@ -80,7 +82,8 @@ plot_missing <- function(dataset, percent) {
       theme_bw() +  
       theme(
         legend.position = "None",
-        panel.grid.major.y = element_blank()
+        panel.grid.major.y = element_blank(),
+        axis.text.x = element_text(angle=25)
         
       )
   } else {
@@ -94,7 +97,8 @@ plot_missing <- function(dataset, percent) {
       theme_bw() +  
       theme(
         legend.position = "None",
-        panel.grid.major.y = element_blank()
+        panel.grid.major.y = element_blank(),
+        axis.text.x = element_text(angle=25)
         
       )
   }
