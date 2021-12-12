@@ -9,7 +9,7 @@ from tqdm import tqdm
 
 def main():
     # Fetch File Paths
-    file_paths = glob.glob('./data/raw/ucr/count_by_state/*.xls')
+    file_paths = glob.glob('./data/raw/ucr/hc_count_by_state/*.xls')
     # Sort them according to year
     file_paths.sort(key = lambda x: int(x[-8:-4]))
     # Create a dataframe to store the result and initialize it with the values for the first year
