@@ -1,6 +1,5 @@
 #! usr/env/bin/python3
 import glob
-import os
 
 import numpy as np
 import pandas as pd
@@ -23,7 +22,10 @@ def main():
 
 
 
-def get_offender_count_by_age(path:str)->pd.DataFrame:  
+def get_offender_count_by_age(path:str)->pd.DataFrame:
+    """
+    Function to return the number of hatecrimes by adults and minors each year as a dataframe
+    """  
     # Extracting the table name from and year from the given file path
     t_name = " ".join(path[path.index("Table"):path.index("_Known")].split("_"))
     t_year = path[path.index(".xls")-4:path.index(".xls")]

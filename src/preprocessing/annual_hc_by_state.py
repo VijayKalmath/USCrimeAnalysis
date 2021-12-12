@@ -1,6 +1,5 @@
 #! usr/env/bin/python3
 import glob
-import os
 
 import numpy as np
 import pandas as pd
@@ -34,10 +33,10 @@ def get_state_crime_count(path: str) -> pd.DataFrame:
     # Read the dataframe
     df_state_count = pd.read_excel(path, sheet_name=t_name)
     # Get the start and end indices of the interested datapoints
-    start = df_state_count.index[df_state_count[t_name] == "Total"][0]
-    end = df_state_count.index[df_state_count[t_name] == "Wyoming"][0]
+    start = df_state_count.index[df_state_count[t_name] == "Total"][0] + 1
+    end = df_state_count.index[df_state_count[t_name] == "Wyoming"][0] + 1
     # Slice the dataset
-    df_state_count = df_state_count.iloc[start + 1: end + 1, 0:2]
+    df_state_count = df_state_count.iloc[start: end, 0:2]
     # Reset the index
     df_state_count.reset_index(drop=True, inplace=True)
     # Rename the columns
