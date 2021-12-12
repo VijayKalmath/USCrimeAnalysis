@@ -15,6 +15,8 @@ library(ggplot2)
 source("R_Scripts/plot_missing.R")
 source("R_Scripts/readJar.R")
 source("R_Scripts/readGVA.R")
+source("R_Scripts/readHC.R")
+
 ```
 
 In this chapter , we take a deep look into the data that we have and analyze missing data patterns, furthermore we try to explain the reasoning behind the missing data.  
@@ -25,34 +27,17 @@ In this chapter , we take a deep look into the data that we have and analyze mis
 # Read Csv Files
 
 JuvenileList = readJar()
-
 JuvelineArrestdf = data.frame(JuvenileList[1])
 JuvelineArrestGenderdf = data.frame(JuvenileList[2])
 JuvelineArrestRacedf = data.frame(JuvenileList[3])
 ```
 
 
-```{r,fig.align='center',fig.height=8,fig.width=8}
-gg_miss_upset(JuvelineArrestdf,nsets = 10)
-
-```
- 
 An Upset plot can be used to visualize the number of times certain variables are missing together with the other variables. This gives the combinations of variables which are missing. The vertical bar shows the intersection values of missing elements in the set. The horizontal bars show the set size of missing values in each variable. 
 In this particular graph, the variables are years. The only variables which have missing values are years from 2010 through 2019. From the size of the set we can see that years 2013 - 2019 have equal number of missing values. 2010-2012 however, have fewer missing value. Hence we can see that there are two sets of overlaps. The height of the vertical bar shows the amount of missing data. We can see that there are 2 categories of crime which have missing data from 2013-2019 (left bar), and two categories of crime which have missing data from 2010-2019.
 
 ```{r,fig.align='center',fig.height=8,fig.width=8}
-
-JuvelineArrestdf  %>%
-  summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col(position = "fill")+
-  labs(x="Proportion")+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-
+gg_miss_fct(x = JuvelineArrestdf, fct = Offense)  + coord_flip()
 ```
 
 We can also look at the what percentage of values are missing from every variable. Unlike overlap, this gives us the absolute estimate of how much data we have missed. We can see that years 2013 to 2019 have the same amount of data missing as we concluded from the previous plot. Here we can see that it is little over 9% missing values of data per variable. Similarly, years 2010-2012 the percentage missing is even less. 
@@ -83,27 +68,58 @@ colnames(GVAMassShootingdf) <- c("IncID","IncDate","State","County","Address", "
 
 Stacked Bar plot to represent proportion of missing data in each column
 
-```{r}
-GVAMassShootingdf  %>%
-  summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col(position = "fill")+
-  labs(x="Proportion")+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-
+```{r,fig.align='center',fig.height=8,fig.width=8}
+missing_stacked_bar_plot(GVAMassShootingdf)
 ```
 
 Missing Plot Matrix for GVA Data
 
-```{r}
+```{r,fig.align='center',fig.height=8,fig.width=8}
 GVAMassShootingPlot <- plot_missing(GVAMassShootingdf,percent = TRUE)
 GVAMassShootingPlot
 ```
 
 
 ## Missing Data in Hate Crime Data 
+
+```{r,fig.align='center',fig.height=8,fig.width=8}
+# Read Csv Files
+HCList = readHC()
+# Order to Dataframes : HCbyOffensedf,HCbyStatedf,HCbyPlacedf,HCbyAgedf,HCTable1,HCTable2_Incidents,HCTable2_Victims,HCTable8
+
+```
+
+###  HC by Offense 
+```{r,fig.align='center',fig.height=8,fig.width=8}
+HCbyOffensedf = data.frame(HCList[1])
+gg_miss_fct(x = HCbyOffensedf, fct = Offense) + coord_flip()
+plot_missing(HCbyOffensedf,percent = TRUE)
+```
+
+###  HC by State 
+
+```{r,fig.align='center',fig.height=8,fig.width=8}
+HCbyStatedf = data.frame(HCList[2])
+gg_miss_fct(x = HCbyStatedf, fct = States) + coord_flip()
+plot_missing(HCbyStatedf,percent = TRUE)
+```
+
+###  HC by Place 
+
+```{r,fig.align='center',fig.height=8,fig.width=8}
+HCbyPlacedf = data.frame(HCList[3])
+gg_miss_fct(x = HCbyPlacedf, fct = Place) + coord_flip()
+plot_missing(HCbyPlacedf,percent = TRUE)
+```
+
+###  HC by Age 
+
+```{r,fig.align='center',fig.height=8,fig.width=8}
+
+HCbyAgedf = data.frame(HCList[4])
+gg_miss_fct(x = HCbyAgedf, fct = AgeCategory) + coord_flip()
+plot_missing(HCbyAgedf,percent = TRUE)
+
+```
+
 

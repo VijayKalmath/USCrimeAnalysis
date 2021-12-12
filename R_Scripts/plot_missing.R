@@ -109,3 +109,17 @@ plot_missing <- function(dataset, percent,xtickangle=0) {
   final_plot
   
 }
+
+
+missing_stacked_bar_plot <- function(dataset){
+  dataset %>%
+    summarise_all(list(~is.na(.)))%>%
+    pivot_longer(everything(),
+                 names_to = "variables", values_to="missing") %>%
+    count(variables, missing) %>%
+    ggplot(aes(y=variables,x=n,fill=missing))+
+    geom_col(position = "fill")+
+    labs(x="Proportion")+
+    scale_fill_manual(values=c("skyblue3","gold"))+
+    theme(axis.title.y=element_blank())
+}

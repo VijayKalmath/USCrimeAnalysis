@@ -19,3 +19,8 @@ gun-violence-data
 mass-shootings
 accidental-deaths-and-injuries
 juvenile-arrest-records-jar
+hc-by-offense
+hc-by-state
+hc-by-place
+hc-by-age
+hc-by-table10
