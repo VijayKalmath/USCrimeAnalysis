@@ -1,1 +1,29 @@
 # Data transformation
+
+```{R}
+library(tidyverse)
+library(patchwork)
+library(ggplot2)
+library(kableExtra)
+
+```
+
+## FBI: Uniform Crime Reporting (UCR)
+
+The UCR data set consisted of year wise data of crime counts. The data was reported with respect to various parameters such as the cause of the crime, type of crime and also various demographics of victims and offenders. This was consolidated over 14 tables depending on the parameters. We selected 6 out of the 14 tables to analyse and visualize the crimes in the country during 2010-2019. 
+For every year from 2010 - 2019, the source had a set of all tables with the following data:
+
+1. Incidents, Offense, Victims and Known Offenders by Bias Motivation
+2. Incidents, Offense, Victims and Known Offenders by Offense Type
+3. Offenders, Offenses and Race/Ethnicity by Offense Type
+4. Offenders and Race/Ethnicity by Age
+5. Incident and Bias Motivation by Location
+6. Offenses and Type of Offenses by State
+
+Through these 6 tables we extract enough information to comment about certain trends of crime in the country based on geographic location, demographics of the offenders and demographics of the offenses. Since all the data is distributed over 10 years, we can also compare changes to important events.
+
+### Hate Crime by Bias
+We use the Incidents, Offense, Victims and Known Offenders by Bias Motivation data from 2010 to 2019. Since the two main statistics are the number of incidents and numbe of victims we only consider those over 10 years. 
+
+
+
