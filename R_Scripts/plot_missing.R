@@ -1,5 +1,5 @@
 
-plot_missing <- function(dataset, percent) {
+plot_missing <- function(dataset, percent,xtickangle=0) {
   
   # Get Missing Patterns from Dataset.
   missing_patterns <- data.frame(is.na(dataset)) %>%
@@ -42,7 +42,7 @@ plot_missing <- function(dataset, percent) {
     xlab("variable") + 
     annotate("text", x = Text_x_Cord,y = Text_y_Cord,alpha = 1.2,label="Complete Cases") +
     annotate("rect", xmin = 0.5, xmax = Rect_x_Cord, ymin = Text_y_Cord - 0.5 , ymax=Text_y_Cord + 0.5, alpha=0.1) + 
-    theme(legend.position = "None" ,   axis.text.x = element_text(angle=25))
+    theme(legend.position = "None" ,   axis.text.x = element_text(angle=xtickangle))
   
   
   
@@ -56,7 +56,7 @@ plot_missing <- function(dataset, percent) {
       theme_bw() +
       theme (
         panel.grid.major.x = element_blank(),
-        axis.text.x = element_text(angle=25)
+        axis.text.x = element_text(angle=xtickangle)
       )
   } else {
     count_plot <- ggplot(y %>% distinct(Key,KeyCount)) +
@@ -67,7 +67,7 @@ plot_missing <- function(dataset, percent) {
       theme_bw() +
       theme (
         panel.grid.major.x = element_blank(),
-        axis.text.x = element_text(angle=25)
+        axis.text.x = element_text(angle=xtickangle)
       )
   }
   
@@ -83,7 +83,7 @@ plot_missing <- function(dataset, percent) {
       theme(
         legend.position = "None",
         panel.grid.major.y = element_blank(),
-        axis.text.x = element_text(angle=25)
+        axis.text.x = element_text(angle=xtickangle)
         
       )
   } else {
@@ -98,7 +98,7 @@ plot_missing <- function(dataset, percent) {
       theme(
         legend.position = "None",
         panel.grid.major.y = element_blank(),
-        axis.text.x = element_text(angle=25)
+        axis.text.x = element_text(angle=xtickangle)
         
       )
   }
