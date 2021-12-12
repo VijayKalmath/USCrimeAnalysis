@@ -14,11 +14,11 @@ def main():
     # Create a dataframe to store the result and initialize it with the values for the first year
     df_res = get_offender_count_by_age(file_paths[0])
     # Iterate over the rest of the files
-    for p in file_paths[1:]:
+    for p in  tqdm(file_paths[1:]):
         df_temp = get_offender_count_by_age(p)
         df_res = pd.merge(df_res,df_temp,how="left",on=["Age Category"])
     # Save the result to disk
-    df_res.to_csv("./data/processed/annual_offenders_by_age.csv")
+    df_res.to_csv("./data/processed/annual_offenders_by_age.csv",index=False)
 
 
 def get_offender_count_by_age(path:str)->pd.DataFrame:

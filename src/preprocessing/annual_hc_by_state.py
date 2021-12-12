@@ -18,7 +18,7 @@ def main():
         df_temp = get_state_crime_count(p)
         df_res = pd.merge(df_res,df_temp,how="left",on=["States"])
     # Save the result to disk
-    df_res.to_csv("./data/processed/annual_hc_by_state.csv")
+    df_res.to_csv("./data/processed/annual_hc_by_state.csv",index=False)
 
 
 

@@ -18,7 +18,7 @@ def main():
         df_temp = get_place_crime_count(p)
         df_res = pd.merge(df_res, df_temp, on = "Place", how = "left")
     # Save the result to disk
-    df_res.to_csv('./data/processed/annual_hc_count_by_place.csv')
+    df_res.to_csv('./data/processed/annual_hc_count_by_place.csv',index=False)
 
 
 
@@ -32,18 +32,18 @@ def get_place_crime_count(path:str)->pd.DataFrame:
 
     try:
         # Read the Excel spreadsheet
-        df_place_crime = pd.read_excel(path,sheet_name=t_name)
+        df = pd.read_excel(path,sheet_name=t_name)
         # Get the start and end indices of the interested datapoints
-        start = df_place_crime.index[df_place_crime[t_name] == "Total"][0] + 1
-        end = df_place_crime.index[df_place_crime[t_name] == "Multiple locations"][0] 
+        start = df.index[df[t_name] == "Total"][0] + 1
+        end = df.index[df[t_name] == "Multiple locations"][0] 
         # Slice the dataset
-        df_place_crime = df_place_crime.iloc[start:end,0:2]
+        df = df.iloc[start:end,0:2]
         # Reset the index for the reduced dataframe
-        df_place_crime.reset_index(drop = True, inplace = True)
+        df.reset_index(drop = True, inplace = True)
         # Rename the columns
-        df_place_crime.rename(columns={t_name: "Place", "Unnamed: 1": t_year}, inplace = True)
+        df.rename(columns={t_name: "Place", "Unnamed: 1": t_year}, inplace = True)
         # Return the value
-        return df_place_crime
+        return df
     except:
         # If there is no such data return an empty dataframe
         i_list = list(range(0,47))
