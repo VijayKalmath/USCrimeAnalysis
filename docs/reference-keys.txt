@@ -8,3 +8,9 @@ hate-crime-data
 results
 interactive-component
 conclusion
+fbi-uniform-crime-reporting-ucr
+hate-crime-by-bias
+hate-crime-by-offense-type
+missing-data-in-juvenile-arrest-records
+missing-data-in-gun-violence-archive
+missing-data-in-hate-crime-data

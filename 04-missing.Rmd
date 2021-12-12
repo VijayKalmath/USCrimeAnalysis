@@ -11,12 +11,10 @@ library(Lock5withR)
 library(naniar)
 library(ggplot2)
 
+# Import Helper Libraries
 source("R_Scripts/plot_missing.R")
 source("R_Scripts/readJar.R")
 source("R_Scripts/readGVA.R")
-
-
-
 ```
 
 In this chapter , we take a deep look into the data that we have and analyze missing data patterns, furthermore we try to explain the reasoning behind the missing data.  
@@ -31,17 +29,30 @@ JuvenileList = readJar()
 JuvelineArrestdf = data.frame(JuvenileList[1])
 JuvelineArrestGenderdf = data.frame(JuvenileList[2])
 JuvelineArrestRacedf = data.frame(JuvenileList[3])
+```
+
+
+```{r,fig.align='center',fig.height=8,fig.width=8}
+gg_miss_upset(JuvelineArrestdf,nsets = 10)
+
+```
+ 
+An Upset plot can be used to visualize the number of times certain variables are missing together with the other variables. This gives the combinations of variables which are missing. The vertical bar shows the intersection values of missing elements in the set. The horizontal bars show the set size of missing values in each variable. 
+In this particular graph, the variables are years. The only variables which have missing values are years from 2010 through 2019. From the size of the set we can see that years 2013 - 2019 have equal number of missing values. 2010-2012 however, have fewer missing value. Hence we can see that there are two sets of overlaps. The height of the vertical bar shows the amount of missing data. We can see that there are 2 categories of crime which have missing data from 2013-2019 (left bar), and two categories of crime which have missing data from 2010-2019.
+
+```{r,fig.align='center',fig.height=8,fig.width=8}
+gg_miss_var(JuvelineArrestdf, show_pct = TRUE)
+```
+We can also look at the what percentage of values are missing from every variable. Unlike overlap, this gives us the absolute estimate of how much data we have missed. We can see that years 2013 to 2019 have the same amount of data missing as we concluded from the previous plot. Here we can see that it is little over 9% missing values of data per variable. Similarly, years 2010-2012 the percentage missing is even less. 
+
+We plot the upset plot and the percentage missing values plot for the Juvenile Race records as well. We can see a similar trend in missing values in this. We can thus conclude that there is a gap in our data for 4 types of crimes and it is consistent throughout all classifications.
+
+```{r,fig.align='center',fig.height=8,fig.width=8}
 
 JuvenileArrestMissingPlot <- plot_missing(JuvelineArrestdf,percent = TRUE)
-
-JuvenileArrestGenderMissingPlot <- plot_missing(JuvelineArrestGenderdf,percent = TRUE)
-
-JuvenileArrestRaceMissingPlot <- plot_missing(JuvelineArrestRacedf,percent = TRUE)
-
 JuvenileArrestMissingPlot
-JuvenileArrestGenderMissingPlot
-JuvenileArrestRaceMissingPlot
 ```
+
 
 ## Missing Data in Gun Violence Archive
 
@@ -53,207 +64,29 @@ GVAList = readGVA()
 GVAMassShootingdf = data.frame(GVAList[1])
 GVAAccidentalInjuriesdf = data.frame(GVAList[2])
 GVAAccidentalDeathsdf = data.frame(GVAList[3])
+```
 
+d) Stacked Bar plot to represent proportion of missing data in each column
+
+```{r}
+GVAMassShootingdf  %>%
+  summarise_all(list(~is.na(.)))%>%
+  pivot_longer(everything(),
+               names_to = "variables", values_to="missing") %>%
+  count(variables, missing) %>%
+  ggplot(aes(y=variables,x=n,fill=missing))+
+  geom_col(position = "fill")+
+  labs(x="Proportion")+
+  scale_fill_manual(values=c("skyblue3","gold"))+
+  theme(axis.title.y=element_blank())
+
+```
+
+```{r}
 GVAMassShootingPlot <- plot_missing(GVAMassShootingdf,percent = TRUE)
-
-GVAAccidentalInjuriesPlot <- plot_missing(GVAAccidentalInjuriesdf,percent = TRUE)
-
-GVAAccidentalDeathsPlot <- plot_missing(GVAAccidentalDeathsdf,percent = TRUE)
-
 GVAMassShootingPlot
-GVAAccidentalInjuriesPlot
-GVAAccidentalDeathsPlot
 ```
 
 
-```{R}
-#gg_miss_upset(df,nsets = n_var_miss(df))
+## Missing Data in Hate Crime Data 
 
-```
- 
-An Upset plot can be used to visualize the number of times certain variables are missing together with the other variables. This gives the combinations of variables which are missing. The vertical bar shows the intersection values of missing elements in the set. The horizontal bars show the set size of missing values in each variable. 
-In this particular graph, the variables are years. The only variables which have missing values are years from 2010 through 2019. From the size of the set we can see that years 2013 - 2019 have equal number of missing values. 2010-2012 however, have fewer missing value. Hence we can see that there are two sets of overlaps. The height of the vertical bar shows the amount of missing data. We can see that there are 2 categories of crime which have missing data from 2013-2019 (left bar), and two categories of crime which have missing data from 2010-2019.
-
-```{R}
-gg_miss_var(df, show_pct = TRUE)
-```
-We can also look at the what percentage of values are missing from every variable. Unlike overlap, this gives us the absolute estimate of how much data we have missed. We can see that years 2013 to 2019 have the same amount of data missing as we concluded from the previous plot. Here we can see that it is little over 9% missing values of data per variable. Similarly, years 2010-2012 the percentage missing is even less. 
-
-```{r}
-
-df %>% head()
-```
-
-
-```{r}
-
-df  %>%
-  summarise_all(list(~is.na(.)))
-```
-
-
-```{r}
-df  %>%
-  summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) 
-
-```
-
-c) Stacked Bar plot to represent the number of missing data in each column
-
-```{r}
-
-df  %>%
- summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col()+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-```
-d) Stacked Bar plot to represent proportion of missing data in each column
-
-
-```{r}
-df  %>%
-  summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col(position = "fill")+
-  labs(x="Proportion")+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-```
-
-
-## JAR Race 
-
-a)
-
-
-```{R}
-source("plot_missing.R")
-
-df2 <- read.csv("data/Juvenile_Race_Records.csv")
-
-plot_missing(df2,percent = FALSE)
-
-
-```
-
-```{R}
-gg_miss_upset(df2, nsets = n_var_miss(df2))
-```
-
-
-
-```{R}
-gg_miss_var(df2, show_pct = TRUE)
-```
-
-We plot the upset plot and the percentage missing values plot for the Juvenile Race records as well. We can see a similar trend in missing values in this. We can thus conclude that there is a gap in our data for 4 types of crimes and it is consistent throughout all classifications.
-
-```{r}
-
-df2 %>% head()
-```
-
-
-
-c) Stacked Bar plot to represent the number of missing data in each column
-
-```{r}
-
-df2  %>%
- summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col()+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-```
-d) Stacked Bar plot to represent proportion of missing data in each column
-
-
-```{r}
-df2  %>%
-  summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col(position = "fill")+
-  labs(x="Proportion")+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-```
-
-
-## Hate Crime Data 
-
-```{R}
-
-df3 <- read.csv("data/hate_crime.csv")
-
-plot_missing(df3,percent = FALSE)
-
-
-```
-
-To analyze the missing data in Hate Crime, we will be using Heat map visualization. We will consider it based o two variables: State and Year. To do this we create a slightly different heat map. The plot shows the number of missing values in each column, but they are broken down by one of the variables. 
-
-```{R}
-gg_miss_fct(x = df3, fct = STATE_NAME) + labs(title = "Missing Values Heat Map")
-```
-We can now see how many values are missing in each variable, and the proportion throughout the states. We can see that majority of the data is missing in juvenile and adult victim and offender count variables, with some missing data in individual victims.We can also analyze which states have more missing data by looking at the percentage missing data in its column. e.g Guam has a high amount of missing data.
-
-```{R}
-gg_miss_fct(x = df3, fct = DATA_YEAR) + labs(title = "Missing Values Heat Map")
-```
-
-Additionally we can also look at the year of data collection. Again we see data is missing from the variables mentioned earlier. But now we can also observe that the major chunk missing from 1990-2010. Thus we can say that these variables have been recorded and documented quite recently.
-
-```{R}
-gg_miss_upset(df3)
-```
-The upset plot for Hate crime shows much more overlaps. The biggest overlap as we can see is the missing data in victim and offender counts. But there is also some overlap with total individual victims. The intersection are then a sort of permuations of these variables where only few of them were missing. 
-
-c) Stacked Bar plot to represent the number of missing data in each column
-
-```{r}
-
-df3  %>%
- summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col()+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-```
-
-
-d) Stacked Bar plot to represent proportion of missing data in each column
-
-
-```{r}
-df3  %>%
-  summarise_all(list(~is.na(.)))%>%
-  pivot_longer(everything(),
-               names_to = "variables", values_to="missing") %>%
-  count(variables, missing) %>%
-  ggplot(aes(y=variables,x=n,fill=missing))+
-  geom_col(position = "fill")+
-  labs(x="Proportion")+
-  scale_fill_manual(values=c("skyblue3","gold"))+
-  theme(axis.title.y=element_blank())
-```
