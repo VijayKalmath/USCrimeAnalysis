@@ -32,3 +32,21 @@ df %>%
   kable_styling("striped", font_size = 9, full_width = F) %>% 
   scroll_box(width = "500px", height = "300px") 
 ```
+
+### Hate Crime by Offense Type
+Similarly we have data which  categorized by offense type instead of Bias. Here we can store two separate data tables for incidents and victims, since some types of offenses do not involve victims. (Or are against propert and/or society)
+
+```{R}
+df <- read_csv("data/processed/FBI-UCR/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
+df %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+
+df1 <- read_csv("data/processed/FBI-UCR/FBI_UCR_TABLE2_Victims.csv",show_col_types = FALSE)
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
