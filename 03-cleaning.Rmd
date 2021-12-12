@@ -28,6 +28,7 @@ We use the Incidents, Offense, Victims and Known Offenders by Bias Motivation da
 ```{R}
 df <- read_csv("data/processed/FBI-UCR/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df %>%
-  kbl() %>%
-  kable_material_dark()
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
 ```
