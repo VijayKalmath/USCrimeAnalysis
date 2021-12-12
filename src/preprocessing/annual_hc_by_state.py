@@ -15,11 +15,11 @@ def main():
     # Create a dataframe to store the result and initialize it with the values for the first year
     df_res = get_state_crime_count(file_paths[0])
     # Iterate over the rest of the files
-    for p in file_paths[2:]:
+    for p in tqdm(file_paths[2:]):
         df_temp = get_state_crime_count(p)
         df_res = pd.merge(df_res,df_temp,how="left",on=["States"])
     # Save the result to disk
-    df_res.to_csv("./data/processed/annual_hc_by_state.csv",index=False)
+    df_res.to_csv("./data/processed/annual_hc_by_state.csv")
 
 
 
