@@ -26,7 +26,7 @@ Through these 6 tables we extract enough information to comment about certain tr
 We use the Incidents, Offense, Victims and Known Offenders by Bias Motivation data from 2010 to 2019. Since the two main statistics are the number of incidents and number of victims we only consider those over 10 years. We now get long form data structure with Bias type, Incidents, Victims and Year
 
 ```{R}
-df <- read_csv("data/processed/FBI_UCR/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
+df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df %>%
   kable(escape = F) %>% 
   kable_styling("striped", font_size = 9, full_width = F) %>% 
@@ -38,7 +38,7 @@ Similarly we have data which  categorized by offense type instead of Bias. Here 
 
 Incidents: Crime and Years
 ```{R}
-df <- read_csv("data/processed/FBI_UCR/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
+df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
 df %>%
   kable(escape = F) %>% 
   kable_styling("striped", font_size = 9, full_width = F) %>% 
@@ -46,7 +46,7 @@ df %>%
 ```
 Victims: Crime and Years
 ```{R}
-df1 <- read_csv("data/processed/FBI_UCR/FBI_UCR_TABLE2_Victims.csv",show_col_types = FALSE)
+df1 <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Victims.csv",show_col_types = FALSE)
 df1 %>%
   kable(escape = F) %>% 
   kable_styling("striped", font_size = 9, full_width = F) %>% 
@@ -55,7 +55,7 @@ df1 %>%
 
 ### Hate Crime by State
 ```{R}
-df1 <- read_csv("data/processed/FBI_UCR/FBI_UCR_TABLE11.csv",show_col_types = FALSE)
+df1 <- read_csv("data/processed/ucr/annual_hc_by_state.csv",show_col_types = FALSE)
 df1 %>%
   kable(escape = F) %>% 
   kable_styling("striped", font_size = 9, full_width = F) %>% 
