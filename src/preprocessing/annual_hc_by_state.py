@@ -8,7 +8,7 @@ from tqdm import tqdm
 
 def main():
     # Fetch File Paths
-    file_paths = glob.glob(r'./data/raw/hc_count_by_state/*.xls')
+    file_paths = glob.glob(r'./data/raw/ucr/hc_count_by_state/*.xls')
     # Sort them according to year
     file_paths.sort(key = lambda x: int(x[-8:-4]))
     # Create a dataframe to store the result and initialize it with the values for the first year
@@ -18,7 +18,7 @@ def main():
         df_temp = get_state_crime_count(p)
         df_res = pd.merge(df_res,df_temp,how="left",on=["States"])
     # Save the result to disk
-    df_res.to_csv("./data/processed/annual_hc_by_state.csv",index=False)
+    df_res.to_csv("./data/processed/ucr/annual_hc_by_state.csv",index=False)
 
 
 
