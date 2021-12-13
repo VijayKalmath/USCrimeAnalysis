@@ -87,7 +87,7 @@
             .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
             .on('click', () => focusOn()); // Reset zoom on canvas click
 
-        d3.json('https://gist.githubusercontent.com/sjoshi5/f761d9ac11596353872b05f52863c3b5/raw/9d0fcffcec9c2bad887118875909fbf9444c03b3/TR2.json', (error, root) => {
+        d3.json('https://raw.githubusercontent.com/VijayKalmath/USCrimeAnalysis/main/data/Consolidated.json', (error, root) => {
             if (error) throw error;
 
             root = d3.hierarchy(root);
