@@ -23,6 +23,8 @@ hc-by-age
 results
 interactive-component
 conclusion
-motivation
-hate-crime
-our-proposal
+ucr-hate-crime-data
+j
+gun-violence-data-1
+limitations
+scope-of-work
