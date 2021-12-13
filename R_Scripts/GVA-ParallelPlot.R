@@ -1,3 +1,4 @@
+GVA_ParallelPlot <- function() {
 # Parallel Plots from GVA
 
 # X Axis -> Year 
@@ -63,22 +64,6 @@ Gddf %>% filter(Age != "Adult") %>% group_by(Year,Age) %>% summarise(InjuredCoun
   )
 
 
-
-Gmdf %>% filter(Age != "Adult") %>% group_by(Year,Age) %>% summarise(InjuredCount  = sum(Injured)) %>% pivot_wider(names_from = Year,values_from = InjuredCount) %>% 
-  ggparcoord(columns = 2:8, 
-             groupColumn=1, 
-             scale="globalminmax",
-             showPoints = TRUE,
-             title = "Parallel Coordinate Plot for the Iris Data",
-             alphaLines = 0.3
-  ) + 
-  scale_color_viridis(discrete=TRUE) +
-  theme_ipsum()+
-  theme(
-    plot.title = element_text(size=10)
-  )
-
-
 Gidf <- subset(Gidf, State %in% top_10_statesidf$State)
 Gidf  %>% group_by(Year,State) %>% summarise(InjuredCount  = sum(Injured)) %>% pivot_wider(names_from = Year,values_from = InjuredCount) %>% 
   ggparcoord(columns = 2:8, 
@@ -129,3 +114,5 @@ Gmdf  %>% group_by(Year,State) %>% summarise(InjuredCount  = sum(Injured)) %>% p
     plot.title = element_text(size=10)
   )  
 
+
+}

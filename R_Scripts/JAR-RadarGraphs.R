@@ -1,3 +1,5 @@
+JarGenderRadar <- function() {
+
 library(fmsb)
 source("R_Scripts/readJar.R")
 
@@ -48,3 +50,5 @@ cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,5), cglwd=0.8,
 vlcex=0.8 
 )
 legend(x=1, y=1, legend = rownames(as.matrix(JarGendertop6)[-c(1,2),]), bty = "n", pch=20 , col=colors_in , text.col = "grey", cex=.8, pt.cex=2)
+
+}

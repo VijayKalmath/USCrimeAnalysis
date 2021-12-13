@@ -1,3 +1,4 @@
+JarBoxPlots <- function() {
 # This for  Box plot  plot for Juvenile Arrest Records faceted by Gender
 source("R_Scripts/readJar.R")
 
@@ -24,3 +25,4 @@ JuvelineArrestGenderFemalePlot <- ggplot(JuvelineArrestGenderdf %>% filter(Gende
 
 final_plot <- JuvelineArrestGenderMalePlot + JuvelineArrestGenderFemalePlot
 final_plot
+}

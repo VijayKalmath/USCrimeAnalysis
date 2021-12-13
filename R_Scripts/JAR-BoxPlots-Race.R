@@ -1,3 +1,5 @@
+JarBoxPlots_RacePLot <- function() {
+
 # This for Box plot for Juvenile Arrest Records faceted by Race
 source("R_Scripts/readJar.R")
 
@@ -34,3 +36,5 @@ JRAplot <- ggplot(JRdf %>% filter(Race=="Asian"), aes(x=reorder(Offense,OffenseV
 
 final_plot <- JRWhiteplot + JRAAplot + JRAIplot + JRAplot
 final_plot
+
+}

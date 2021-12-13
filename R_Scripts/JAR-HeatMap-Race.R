@@ -1,7 +1,10 @@
+Jar_Heatmap_plot <- function() {
 # Heat Map for JAR Data
 library(ggplot2)
 library(hrbrthemes)
 source("R_Scripts/readJar.R")
+
+
 
 JuvenileList = readJar()
 Jdf = data.frame(JuvenileList[3])
@@ -23,3 +26,4 @@ ggplot(Jdf) +
   geom_tile(aes(x=Year, y=fct_reorder(Offense,prop), fill= prop)) +
   scale_fill_distiller(palette = "YlOrBr",direction = 1) +
   facet_wrap(~ Race) 
+}

@@ -1,5 +1,7 @@
+JarRadarRace <- function() {
 library(fmsb)
 source("R_Scripts/readJar.R")
+
 
 JuvenileList = readJar()
 Jdf = data.frame(JuvenileList[3])
@@ -67,3 +69,4 @@ radarchart(JarRacetop6 , axistype=1 ,
 )
 legend(x=1, y=1, legend = rownames(as.matrix(JarRacetop6)[-c(1,2),]), bty = "n", pch=20 , col=colors_in , text.col = "grey", cex=.8, pt.cex=2)
 
+}

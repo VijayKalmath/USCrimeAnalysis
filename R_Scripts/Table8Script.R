@@ -1,3 +1,5 @@
+HCtable8_plot <- function() {
+
 # UCR Table 8 
 library(fmsb)
 library(hrbrthemes)
@@ -28,3 +30,5 @@ ggparcoord(HC8df,columns = 2:7, groupColumn = 1,splineFactor = 6.0,
     plot.title = element_text(size=13)
   ) +
   xlab("")
+
+}

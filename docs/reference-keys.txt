@@ -28,3 +28,5 @@ j
 gun-violence-data-1
 limitations
 scope-of-work
+hate-crime-data-by-offense
+adding-my-plots-vijay

@@ -1,4 +1,5 @@
 # GVA Map Plot 
+GunViolenceStateMap<- function() {
 
 library(usmap)
 library(ggplot2)
@@ -7,6 +8,7 @@ library(hrbrthemes)
 library(GGally)
 library(viridis)
 source("R_Scripts/readGVA.R")
+
 
 GVAList = readGVA()
 Gidf = data.frame(GVAList[2])
@@ -35,3 +37,5 @@ map_with_animation <- plot_usmap(data = Gmdf, values = "injuredcount", color = "
 map_with_animation
 
 anim_save("GVA-MassShootingUSMap.gif")
+
+}

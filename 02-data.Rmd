@@ -5,7 +5,7 @@ For this project we have drawn data from multiple sources which have archives of
 ## UCR Hate Crime Data
 
 - Link: [FBI UCR](https://ucr.fbi.gov/hate-crime)
-- Overview: The data was segregated according to the hate crimes observed each year. Furthermore, for every annual report the data was split across 14 spreadsheets according to the following order
+- Overview: Data on the number of incidents, offenses, victims, and offenders in reported crimes that were motivated in whole or in part by a bias are available in the annual Hate Crime Statistics publication. The types of bias motivations captured include those against the victim’s perceived race, gender identity, religion, disability, sexual orientation, or ethnicity/national origin as well as bias crimes committed by or directed toward juveniles.
 
 ```
 |-2019 (or any year)

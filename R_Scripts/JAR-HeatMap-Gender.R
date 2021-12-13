@@ -1,7 +1,9 @@
+JarHeatMap_GenderPlot <- function() {
 # Heat Map for JAR Data
 library(ggplot2)
 library(hrbrthemes)
 source("R_Scripts/readJar.R")
+
 
 JuvenileList = readJar()
 Jdf = data.frame(JuvenileList[2])
@@ -23,4 +25,5 @@ ggplot(Jdf) +
   geom_tile(aes(x=Year, y=fct_reorder(Offense,prop), fill= prop)) +
   scale_fill_distiller(palette = "YlGnBu",direction = 1) +
   facet_wrap(~ Gender) 
-  
+ 
+ } 

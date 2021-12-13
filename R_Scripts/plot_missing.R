@@ -36,8 +36,8 @@ plot_missing <- function(dataset, percent,xtickangle=0) {
   
   # Tile Plot with Annotate 
   tile_plot <- ggplot(y, aes(x = fct_reorder(Key,desc(KeyCount)), y = fct_rev(PatternID), fill = PatternValue)) +
-    geom_tile(color = "white",lwd = 0.5) + 
-    scale_fill_brewer(palette = 'OrRd' ) +
+    geom_tile(color = "white",lwd = 1.5) + 
+    scale_fill_brewer(palette = 'Purple' ) +
     ylab("Missing Pattern") +
     xlab("variable") + 
     annotate("text", x = Text_x_Cord,y = Text_y_Cord,alpha = 1.2,label="Complete Cases") +
@@ -49,22 +49,22 @@ plot_missing <- function(dataset, percent,xtickangle=0) {
   # Row Count top plot
   if(percent){
     count_plot <- ggplot(y %>% distinct(Key,KeyPercentage)) +
-      geom_bar(mapping = aes(x = fct_reorder(Key,desc(KeyPercentage)),y = KeyPercentage),stat = "identity",fill="#9ecae1") + 
+      geom_bar(mapping = aes(x = fct_reorder(Key,desc(KeyPercentage)),y = KeyPercentage),stat = "identity",fill="#450d54") + 
       ggtitle("Missing value patterns") +
       ylab("% Rows Missing") + 
       xlab("") +
-      theme_bw() +
+      theme_light() +
       theme (
         panel.grid.major.x = element_blank(),
         axis.text.x = element_text(angle=xtickangle)
       )
   } else {
     count_plot <- ggplot(y %>% distinct(Key,KeyCount)) +
-      geom_bar(mapping = aes(x = fct_reorder(Key,desc(KeyCount)),y = KeyCount),stat = "identity",fill="#9ecae1") +
+      geom_bar(mapping = aes(x = fct_reorder(Key,desc(KeyCount)),y = KeyCount),stat = "identity",fill="#450d54") +
       ggtitle("Missing value patterns") +
       ylab("Num Rows Missing") + 
       xlab("") +
-      theme_bw() +
+      theme_light() +
       theme (
         panel.grid.major.x = element_blank(),
         axis.text.x = element_text(angle=xtickangle)
@@ -75,11 +75,11 @@ plot_missing <- function(dataset, percent,xtickangle=0) {
   if(percent){
     patterncount_plot <- ggplot(y %>% distinct(PatternID,PatternPercentage,NoMissing)) +
       geom_bar(mapping = aes(x = fct_rev(PatternID),y = PatternPercentage,fill=NoMissing),stat = "identity") +
-      scale_fill_brewer(palette = 'Blues', direction= -1 ) +
+      scale_fill_brewer(palette = 'PuBuGn', direction= -1 ) +
       xlab("") +
-      ylab("row count") + 
+      ylab("% of rows missing") + 
       coord_flip() +
-      theme_bw() +  
+      theme_light() +  
       theme(
         legend.position = "None",
         panel.grid.major.y = element_blank(),
@@ -90,11 +90,11 @@ plot_missing <- function(dataset, percent,xtickangle=0) {
     
     patterncount_plot <- ggplot(y %>% distinct(PatternID,PatternCount,NoMissing)) +
       geom_bar(mapping = aes(x = fct_rev(PatternID),y = PatternCount,fill=NoMissing),stat = "identity") +
-      scale_fill_brewer(palette = 'Blues', direction= -1 ) +
+      scale_fill_brewer(palette = 'PuBuGn', direction= -1 ) +
       xlab("") +
       ylab("row count") + 
       coord_flip() +
-      theme_bw() +  
+      theme_light() +  
       theme(
         legend.position = "None",
         panel.grid.major.y = element_blank(),
@@ -120,6 +120,6 @@ missing_stacked_bar_plot <- function(dataset){
     ggplot(aes(y=variables,x=n,fill=missing))+
     geom_col(position = "fill")+
     labs(x="Proportion")+
-    scale_fill_manual(values=c("skyblue3","gold"))+
+    scale_fill_manual(values=c("#77d86b"))+
     theme(axis.title.y=element_blank())
 }

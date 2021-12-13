@@ -1,4 +1,4 @@
-
+GVA_Animation <- function() {
 # Charge libraries:
 library(ggplot2)
 library(gganimate)
@@ -35,9 +35,4 @@ ggplot(Gmdf, aes(x=InjuredCount, y=fct_reorder(State,InjuredCount,max), fill=Sta
   transition_states(Year,wrap=FALSE) +
   ease_aes('linear')
 
-
-anim_save("GVA-MassShootingbyMonth.gif")
-
-#```{r chunk-label, fig.show='animate', ffmpeg.format='gif', dev='jpeg'}
-#```
-
+}
