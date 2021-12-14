@@ -38,9 +38,12 @@ Gidf %>% filter(Age != "Adult") %>% group_by(Year,Age) %>% summarise(InjuredCoun
              groupColumn=1, 
              scale="globalminmax",
              showPoints = TRUE,
-             title = "Parallel Coordinate Plot for the Iris Data",
+             title = "Parallel Coordinate Plot for Injuries across the Years",
              alphaLines = 0.3
              ) + 
+  theme(text = element_text(size = 20)) +
+  ylab("Number of Injuries")+
+  xlab("Year")+
   scale_color_viridis(discrete=TRUE) +
   theme_ipsum()+
   theme(
@@ -54,9 +57,12 @@ Gddf %>% filter(Age != "Adult") %>% group_by(Year,Age) %>% summarise(InjuredCoun
              groupColumn=1, 
              scale="globalminmax",
              showPoints = TRUE,
-             title = "Parallel Coordinate Plot for the Iris Data",
+             title = "Parallel Coordinate Plot for Death across the Years",
              alphaLines = 0.3
   ) + 
+  theme(text = element_text(size = 20)) +
+  ylab("Number of Deaths")+
+  xlab("Year")+
   scale_color_viridis(discrete=TRUE) +
   theme_ipsum()+
   theme(
@@ -70,15 +76,17 @@ Gidf  %>% group_by(Year,State) %>% summarise(InjuredCount  = sum(Injured)) %>% p
              groupColumn=1, 
              scale="globalminmax",
              showPoints = TRUE,
-             title = "Parallel Coordinate Plot for the Iris Data",
+             title = "Parallel Coordinate Plot for Injuries in top 10 States",
              alphaLines = 0.3
   ) + 
+  theme(text = element_text(size = 20)) +
+  ylab("Number of Injuries")+
+  xlab("Year")+
   scale_color_viridis(discrete=TRUE) +
   theme_ipsum()+
   theme(
-    legend.position="none",
     plot.title = element_text(size=10)
-  )  
+  )
 
 
 Gddf <- subset(Gddf, State %in% top_10_statesddf$State)
@@ -87,15 +95,18 @@ Gddf  %>% group_by(Year,State) %>% summarise(InjuredCount  = sum(Injured)) %>% p
              groupColumn=1, 
              scale="globalminmax",
              showPoints = TRUE,
-             title = "Parallel Coordinate Plot for the Iris Data",
+             title = "Parallel Coordinate Plot for Deaths in top 10 States",
              alphaLines = 0.3
   ) + 
+  theme(text = element_text(size = 20)) +
+  ylab("Number of Deaths")+
+  xlab("Year")+
   scale_color_viridis(discrete=TRUE) +
   theme_ipsum()+
   theme(
-    legend.position="none",
     plot.title = element_text(size=10)
-  )  
+  )
+
 
 Gmdf <- subset(Gmdf, State %in% top_10_statesmdf$State)
 
@@ -104,15 +115,16 @@ Gmdf  %>% group_by(Year,State) %>% summarise(InjuredCount  = sum(Injured)) %>% p
              groupColumn=1, 
              scale="globalminmax",
              showPoints = TRUE,
-             title = "Parallel Coordinate Plot for the Iris Data",
+             title = "Parallel Coordinate Plot for Mass Shootings in top 10 States",
              alphaLines = 0.3
   ) + 
+  theme(text = element_text(size = 20)) +
+  ylab("Number of Injured")+
+  xlab("Year")+
   scale_color_viridis(discrete=TRUE) +
   theme_ipsum()+
   theme(
-    legend.position="none",
     plot.title = element_text(size=10)
-  )  
-
+  )
 
 }

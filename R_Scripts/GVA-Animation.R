@@ -22,12 +22,19 @@ Gmdf <- merge(Gmdf,state_region_mapping)
 Gmdf$Month <- as.factor(Gmdf$Month)
 levels(Gmdf$Month) <- c("Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec")
 
-ggplot(Gmdf, aes(x=InjuredCount, y=fct_reorder(State,InjuredCount,max), fill=State)) + 
+
+Gmdf <- Gmdf %>% filter(State %in% c("California","Florida","Illinois","Louisiana","Michigan","NewYork","Texas"))
+
+Gmdf <- Gmdf %>% filter(Month %in% c("Jan","Feb","Mar","Jun","Jul","Aug","Oct","Nov","Dec"))
+  
+ggplot(Gmdf, aes(x=InjuredCount/10000, y=fct_reorder(State,InjuredCount,max), fill=State)) + 
   geom_bar(stat='identity') +
   facet_grid(~Month, scales = "free_y") + 
   theme_bw() +
   theme(legend.position='none') + 
-  labs(title = "{closest_state}") +
+  labs(title = "Number of Injuries per Month for top 6 States in Year {closest_state}") +
+  xlab("Number of Injured in Tens of thousands ")+
+  ylab("States")+
   transition_states(Year,wrap=FALSE) +
   ease_aes('linear')
 
