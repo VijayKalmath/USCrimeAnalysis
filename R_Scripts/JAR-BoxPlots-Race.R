@@ -18,18 +18,34 @@ JRdf <- as.data.frame(JRdf)
 
 JRWhiteplot <- ggplot(JRdf %>% filter(Race=="White"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
+  theme(text = element_text(size = 20)) +
+  ggtitle("White")+
+  xlab("Type of Offense")+
+  ylab("Incidents")+
   coord_flip()
 
 JRAAplot <- ggplot(JRdf %>% filter(Race=="AfricanAmerican"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
+  theme(text = element_text(size = 20)) +
+  ggtitle("African American")+
+  xlab("Type of Offense")+
+  ylab("Incidents")+
   coord_flip()
 
 JRAIplot <- ggplot(JRdf %>% filter(Race=="AmericanIndian"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
+  theme(text = element_text(size = 20)) +
+  ggtitle("American Indian")+
+  xlab("Type of Offense")+
+  ylab("Incidents")+
   coord_flip()
 
 JRAplot <- ggplot(JRdf %>% filter(Race=="Asian"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
+  theme(text = element_text(size = 20)) +
+  xlab("Type of Offense")+
+  ylab("Incidents")+
+  ggtitle("Asian")+
   coord_flip()
 
 

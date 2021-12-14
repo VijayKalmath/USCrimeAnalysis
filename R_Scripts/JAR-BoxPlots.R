@@ -17,10 +17,18 @@ JuvelineArrestGenderdf <- as.data.frame(JuvelineArrestGenderdf)
 
 JuvelineArrestGenderMalePlot <- ggplot(JuvelineArrestGenderdf %>% filter(Gender=="Male"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
+  theme(text = element_text(size = 20)) +
+  ggtitle("Male")+
+  xlab("Type of Offense")+
+  ylab("Incidents")+
   coord_flip()
 
 JuvelineArrestGenderFemalePlot <- ggplot(JuvelineArrestGenderdf %>% filter(Gender=="Female"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
-  geom_boxplot() + 
+  geom_boxplot() +
+  theme(text = element_text(size = 20)) +
+  ggtitle("Female")+
+  xlab("Type of Offense")+
+  ylab("Incidents")+
   coord_flip()
 
 final_plot <- JuvelineArrestGenderMalePlot + JuvelineArrestGenderFemalePlot
