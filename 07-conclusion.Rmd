@@ -2,4 +2,13 @@
 
 ## Limitations
 
+# Major events and unreported crimes
+  Major events and happenings in the society result in harsh reactions and an uptick in criminal activity. Many criminal offenses in these chaotic times can go unnoticed and unreported. Moreover, since the available data is of incidents which were reported and/or apprehended, we cannot incorporate offenses which were not reported and hence not documented. One such example is the period during Black Lives Matter protests. Amidst a large volume of major crimes, minor crimes went unnoticed and unreported.
+#Ambiguous and False bias
+Hate Crime is a sensitive topic in today's world and the understanding of bias can vary subjectively. This can also lead to many false reports of Hate Crime under the pretense of "subjective interpretation". 
+#Cyber crime
+While physical crime is documented for the past 10+ years, cyber crime is not very well documented in the records. In the age of internet, due to heavy internet presence of both victims and predators, the rate of cyber crime is also increasing. With increasing availability of documentation, we can consider Cyber Crime trends as future work.
+# No indications of after-effects
+While we present an analysis of number of incidents which are reported and documented, we cannot analyse the damaging effect it had on the society, as it cannot be documented. It will require other types of data and also be considered as an aim for future work.
+
 ## Scope of Work:
