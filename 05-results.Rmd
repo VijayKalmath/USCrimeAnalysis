@@ -60,21 +60,7 @@ The existence of large number of such crimes in parking spots/garage might sugge
 >
 > - [Hayward Parking Lot Shooting](https://www.nbcbayarea.com/news/local/east-bay/shooting-in-hayward-parking-lot/2753592/)
 
-```{r type}
-df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
-df2 <- df[-c(1,2, 8,15, 16), ]
-df2 %>%
-  pivot_longer(., -Crime, values_to = "Incidents", names_to = "Year") %>%
-  ggplot(., aes(x=Year, y=Incidents, group=Crime)) +
-  geom_line(aes(color=Crime)) + geom_point(size =0.5) +
-  geom_vline(xintercept = 8, size =0.5, color = 'brown3')+
-  geom_vline(xintercept = 4, size =0.5, color = 'deepskyblue4')+
-  annotate("text", x = 2.8, y = 3000, label = "Obama Re-elected", size =3)+
-  annotate("text", x = 9, y = 3000, label = "Trump elected", size =3)+
-  ggtitle("Incidents vs Years (by Types of Crime)")
-
-
-```
+## Rate of Crimes over the years
 
 ```{r sumtype}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
@@ -88,7 +74,26 @@ df2 %>%
   annotate("text", x = 2.8, y = 7000, label = "Obama Re-elected", size =3)+
   annotate("text", x = 9, y = 7000, label = "Trump elected", size =3)+
   ggtitle("Incidents vs Years (Aggregated types)")
+```
 
+We can observe from the above time series data, that the total number of hate crimes were on a decline till 2013 (i.e President Obama's second run for office). However it started rising again significantly from 2016 especially leading to a sharp increase (much more than what was observed in the previous decade) by 2017. This was the time during which Donald Trump Jr. was running for the office of US President. This insight might suggest a correlation between the change of political behaviour of the administration and the number of occurances of hate crimes.
+
+> Recent Instance:
+>
+> [NYT Article on the rise of hate crime violene during Trump Administration](https://www.nytimes.com/2019/11/12/us/hate-crimes-fbi-report.html)
+
+```{r type}
+df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
+df2 <- df[-c(1,2, 8,15, 16), ]
+df2 %>%
+  pivot_longer(., -Crime, values_to = "Incidents", names_to = "Year") %>%
+  ggplot(., aes(x=Year, y=Incidents, group=Crime)) +
+  geom_line(aes(color=Crime)) + geom_point(size =0.5) +
+  geom_vline(xintercept = 8, size =0.5, color = 'brown3')+
+  geom_vline(xintercept = 4, size =0.5, color = 'deepskyblue4')+
+  annotate("text", x = 2.8, y = 3000, label = "Obama Re-elected", size =3)+
+  annotate("text", x = 9, y = 3000, label = "Trump elected", size =3)+
+  ggtitle("Incidents vs Years (by Types of Crime)")
 ```
 
 ```{r age}
@@ -140,7 +145,7 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 
 ### Adding my Plots (Vijay)
 
-JAR BoxPlot 
+JAR BoxPlot
 
 ```{r, fig.width=15}
 source("R_Scripts/JAR-BoxPlots-Race.R")
@@ -148,11 +153,11 @@ source("R_Scripts/JAR-BoxPlots-Race.R")
 JarBoxPlots_RacePLot()
 
 ```
+
 ```{r, fig.width=15}
 source("R_Scripts/JAR-BoxPlots.R")
 JarBoxPlots()
 ```
-
 
 ```{r, fig.width=6}
 source("R_Scripts/JAR-HeatMap-Gender.R")
