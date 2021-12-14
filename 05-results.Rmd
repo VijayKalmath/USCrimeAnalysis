@@ -67,7 +67,7 @@ df2 %>%
 df <- read_csv("data/processed/ucr/annual_offenders_by_age.csv",show_col_types = FALSE)
 df2 <- subset(df,select = -c(2,3,4))
 df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year") 
-df2
+
 ggplot(df2, aes(fill=`Age Category`, y=Incidents, x=Year)) + 
     geom_bar(position="dodge", stat="identity")+
     ggtitle("Incidents through Years w.r.t Age Category")
@@ -76,7 +76,7 @@ ggplot(df2, aes(fill=`Age Category`, y=Incidents, x=Year)) +
 ```{r amfm}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df2 <- filter(df, `Bias motivation` %in% c("Anti-Male","Anti-Female"))
-df2
+
 #df2 <- subset(df,select = -c(2,3,4))
 #df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year") 
 #df2
@@ -99,11 +99,11 @@ df$`Bias motivation`[df$`Bias motivation`=="Anti-Asian/Pacific Islander"]<-"Anti
 
 
 df2 <- filter(df, `Bias motivation` %in% c("Anti-White","Anti-Black","Anti-Black or African American","Anti-American Indian/Alaskan Native","Anti-Asian","Anti-Multiple Races, Group"))
-df2
+
 #
 #df2 <- subset(df2,select = -c(3))
 #df2 <-pivot_wider(df2, values_from = "Incidents", names_from = "Year") 
-df
+
 ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) + 
     geom_bar(position="dodge", stat="identity")+
      scale_x_continuous(breaks = c(2010,2011,2012,2013, 2014,2015,2016,2017,2018,2019))+
