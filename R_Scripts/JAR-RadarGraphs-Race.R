@@ -67,6 +67,6 @@ radarchart(JarRacetop6 , axistype=1 ,
            #custom labels
            vlcex=0.8,title=paste("Top 5 Offenses by Race (Radarchart)"),
 )
-legend(x=1, y=1, legend = rownames(as.matrix(JarRacetop6)[-c(1,2),]), bty = "n", pch=20 , col=colors_in , text.col = "grey", cex=.8, pt.cex=2)
+legend(x=2, y=1, legend = rownames(as.matrix(JarRacetop6)[-c(1,2),]), bty = "n", pch=20 , col=colors_in , text.col = "grey", cex=.8, pt.cex=2)
 
 }
