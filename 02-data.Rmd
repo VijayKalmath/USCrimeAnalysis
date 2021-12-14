@@ -4,8 +4,8 @@ For this project we have drawn data from multiple sources which have archives of
 
 ## UCR Hate Crime Data
 
-- Link: [FBI UCR](https://ucr.fbi.gov/hate-crime)
-- Overview: Data on the number of incidents, offenses, victims, and offenders in reported crimes that were motivated in whole or in part by a bias are available in the annual Hate Crime Statistics publication. The types of bias motivations captured include those against the victim’s perceived race, gender identity, religion, disability, sexual orientation, or ethnicity/national origin as well as bias crimes committed by or directed toward juveniles.
+- Link: [FBI UCR Hate Crime](https://ucr.fbi.gov/hate-crime)
+- Overview: The data was segregated according to the hate crimes observed each year. Furthermore, for every annual report the data was split across 14 spreadsheets according to the following order:
 
 ```
 |-2019 (or any year)
@@ -25,8 +25,45 @@ For this project we have drawn data from multiple sources which have archives of
 ## Gun Violence Data
 
 - Link: [Gun Violence Archive](https://www.gunviolencearchive.org/reports)
-- Overview: The data was segre
 
-## J
+- Overview: The data was segregated according to the consequences of gun violence in the US over the last 10 years into the following tables:
 
-1. [FBI's Uniform Crime Reporting Program: Archives on Hate Crime]()
+```
+|- Children: 0-11
+|    |- Killed
+|    |- Injured
+|    |- Accidental Deaths
+|- Teens: 12-17
+|    |- Killed
+|    |- Injured
+|    |- Accidental Deaths
+|- Overall Accidental Deaths
+|- Mass Shoorting Records
+|    |- 2014
+|    |- 2015
+|    |- 2016
+|    |- 2017
+|    |- 2018
+|    |- 2019
+|    |- 2020-2021
+```
+
+## Juvenile Crime Data:
+
+- Link: [Office of Juvenille Justice and Deliquency Prevention](https://www.ojjdp.gov/ojstatbb/crime/jar.asp)
+
+- Overview: The data was a present in a single spreadsheet which had yearly records of felony done by individuals under 18 for the last 30 years classified according to the following categories:
+  - Murder
+  - Rape
+  - Robbery
+  - Aggravated Assault
+  - Burglary
+  - Lareceny
+  - Motor vehicle theft
+  - Arson
+  - Drug Abuse
+  - Vandalism
+  - Possession of weapons
+  - Driving under influence
+  - Liquor Abuse and Drunkedness
+  - Curfew and loitering
