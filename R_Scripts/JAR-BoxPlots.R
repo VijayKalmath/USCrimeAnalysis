@@ -22,7 +22,7 @@ JarBoxPlots <- function() {
   JuvelineArrestGenderMalePlot <- ggplot(Male, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
     geom_boxplot() + 
     theme(text = element_text(size = 20)) +
-    ggtitle("Male")+
+    ggtitle("Spread of Male Arrestees for Offenses in Year 2000 - 2019")+
     xlab("Type of Offense")+
     ylab("Incidents")+
     coord_flip()
@@ -32,7 +32,7 @@ JarBoxPlots <- function() {
   JuvelineArrestGenderFemalePlot <- ggplot(female, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
     geom_boxplot() +
     theme(text = element_text(size = 20)) +
-    ggtitle("Female")+
+    ggtitle("Spread of Female Arrestees for Offenses in Year 2000 - 2019")+
     xlab("Type of Offense")+
     ylab("Incidents")+
     coord_flip()
