@@ -140,41 +140,36 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 
 ### Adding my Plots (Vijay)
 
-JAR BoxPlot
+JAR BoxPlot 
 
-```{r}
+```{r, fig.width=15}
 source("R_Scripts/JAR-BoxPlots-Race.R")
 
 JarBoxPlots_RacePLot()
 
 ```
-
-```{r}
+```{r, fig.width=15}
 source("R_Scripts/JAR-BoxPlots.R")
 JarBoxPlots()
 ```
 
-```{r}
-source("R_Scripts/JAR-BoxPlots.R")
-JarBoxPlots()
-```
 
-```{r}
+```{r, fig.width=6}
 source("R_Scripts/JAR-HeatMap-Gender.R")
 JarHeatMap_GenderPlot()
 ```
 
-```{r}
+```{r, fig.width=6}
 source("R_Scripts/JAR-HeatMap-Race.R")
 Jar_Heatmap_plot()
 ```
 
-```{r}
+```{r,fig.width=5}
 source("R_Scripts/JAR-RadarGraphs-Race.R")
 JarRadarRace()
 ```
 
-```{r}
+```{r,fig.width=5}
 source("R_Scripts/JAR-RadarGraphs.R")
 JarGenderRadar()
 ```
