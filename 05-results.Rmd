@@ -35,18 +35,18 @@ filter(df, Place != "Other/unknown") %>% mutate(Place = fct_reorder(Place, max, 
   ylab('Location')
 ```
 
-We use a Cleaveland dot plot for finding out the places where a hate crime happens more frequently. This can helps us understand if it's just the unavailablity of sufficient survilleance or any other motivation that makes these location more prone to such crimes. Thus we can take measures to strengthen the public security in these places.
+We use a Cleveland dot plot for finding out the places where a hate crime happens more frequently. This can helps us understand if it's just the unavailability of sufficient surveillance or any other motivation that makes these location more prone to such crimes. Thus we can take measures to strengthen the public security in these places.
 
 We can observe that the top 4 spots for hate motivated crimes are:
 
-- Residental Areas
+- Residential Areas
 - Roads
 - Schools
 - Parking Lots
 
 The number of crimes observed in these areas over the last decade far outweigh the incidents observed in other locations such has hotels or grocery store.
 
-Residential areas being the most frequent spots can let us to the assumption that a large portion of these crimes are committed by individuals due to thier bias towards particular people rather than a group perhaps due to the ease of attacking small number rather than going for a large riot.
+Residential areas being the most frequent spots can let us to the assumption that a large portion of these crimes are committed by individuals due to their bias towards particular people rather than a group perhaps due to the ease of attacking small number rather than going for a large riot.
 
 The presence of schools/colleges corroborates our concerns of the rise of intolerance in the youth especially the teenagers who tend to be easily carried away by agendas propagated on social media platforms like Twitter, Facebook or Instagram.
 
@@ -54,7 +54,7 @@ The presence of schools/colleges corroborates our concerns of the rise of intole
 >
 > - [2021 Michigan School Shooting](https://apnews.com/article/oxford-high-school-shooting-shootings-michigan-school-shootings-9bc485fb234a873d0d1fcc99bab6379f)
 
-The existence of large number of such crimes in parking spots/garage might suggest that there is a lack of sufficient security or survelliance for these areas usually spread across several acres or on the secluded portions of a building/store might need some reinforcement.
+The existence of large number of such crimes in parking spots/garage might suggest that there is a lack of sufficient security or surveillance for these areas usually spread across several acres or on the secluded portions of a building/store might need some reinforcement.
 
 > Recent Instance:
 >
@@ -76,7 +76,7 @@ df2 %>%
   ggtitle("Incidents vs Years (Aggregated types)")
 ```
 
-We can observe from the above time series data, that the total number of hate crimes were on a decline till 2013 (i.e President Obama's second run for office). However it started rising again significantly from 2016 especially leading to a sharp increase (much more than what was observed in the previous decade) by 2017. This was the time during which Donald Trump Jr. was running for the office of US President. This insight might suggest a correlation between the change of political behaviour of the administration and the number of occurances of hate crimes.
+We can observe from the above time series data, that the total number of hate crimes were on a decline till 2013 (i.e President Obama's second run for office). However it started rising again significantly from 2016 especially leading to a sharp increase (much more than what was observed in the previous decade) by 2017. This was the time during which Donald Trump Jr. was running for the office of US President. This insight might suggest a correlation between the change of political behavior of the administration and the number of occurrences of hate crimes.
 
 > Recent Instance:
 >
@@ -98,7 +98,7 @@ df2 %>%
   ggtitle("Incidents vs Years (by Types of Crime)")
 ```
 
-In the above time series plot of the rates of different types of crimes over the last decade,we can see that instaces of Simple Assault have remained the almost the same showing some evidence for an inherent presence of bias to harm others based on an identity within a portion of the population. This can be looked upon as a social issue that needs large scale reformation of how people percieve others in general and changes in education might help to mitigate it.
+In the above time series plot of the rates of different types of crimes over the last decade,we can see that instances of Simple Assault have remained the almost the same showing some evidence for an inherent presence of bias to harm others based on an identity within a portion of the population. This can be looked upon as a social issue that needs large scale reformation of how people perceive others in general and changes in education might help to mitigate it.
 
 Furthermore, we can see that there is a sharp rise in robbery motivated by some kind of bias after 2018 (during Trump Administration) while the instances of vandalism took a sharp decline.
 
@@ -114,9 +114,9 @@ ggplot(df2, aes(fill=`Age Category`, y=Incidents, x=Year)) +
     ggtitle("Incidents through Years w.r.t Age Category")
 ```
 
-From the above stacked bar plots, we can infer that the number of hate crimes commited by adults increased to almost 3 folds between 2013 to 2019.
+From the above stacked bar plots, we can infer that the number of hate crimes committed by adults increased to almost 3 folds between 2013 to 2019.
 
-Although the number of hate crime offenses by minors remain low compared to the number of hate crimes commited by adults, there is a gradual increase in the numbers which was also hinted by rise in number of hate crimes obsereved in schools/colleges in the first graph.
+Although the number of hate crime offenses by minors remain low compared to the number of hate crimes committed by adults, there is a gradual increase in the numbers which was also hinted by rise in number of hate crimes observed in schools/colleges in the first graph.
 
 ## Hate Crime by Bias towards a gender
 
@@ -136,9 +136,9 @@ ggplot(df2, aes(x = Year, fill = `Bias motivation`,
    ggtitle("Anti-Male vs Anti-Female Incidents through Years")
 ```
 
-From the above plot, we can infer that in general, the crimes commited against women due to a bias are much larger in number compared to hate crime commited against women.
+From the above plot, we can infer that in general, the crimes committed against women due to a bias are much larger in number compared to hate crime committed against women.
 
-However between 2017-2019, we can see a significant rise in hate crimes against men. This may not be purely due to their identification as a male but have additonal correlation to their sexual orientation (perhaps a rise in homophobia).
+However between 2017-2019, we can see a significant rise in hate crimes against men. This may not be purely due to their identification as a male but have additional correlation to their sexual orientation (perhaps a rise in homophobia).
 
 ## Hate Crime by Bias towards a particular ethnicity
 
@@ -162,7 +162,7 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 
 ```
 
-It can be inferred that over the last decade a bias towards Black individuals has been signifantly higher than the hate crimes towards other races. Although this necessarirly does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
+It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
 
 ## Juvenille Crimes
 
@@ -177,6 +177,7 @@ JarBoxPlots_RacePLot()
 source("R_Scripts/JAR-BoxPlots.R")
 JarBoxPlots()
 ```
+It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
 
 ## Juvenille Crimes by Gender
 
@@ -185,7 +186,7 @@ source("R_Scripts/JAR-HeatMap-Gender.R")
 JarHeatMap_GenderPlot()
 ```
 
-From the above heatmap we can analyse the various categories of crimes commited by minors faceted over gender. For crimes like Larceny, Drug Abuse, Liquor Law violation and Simple Assault, the number of crimes conducted by males signficantly higher than those conducted
+From the above heatmap we can analyse the various categories of crimes committed by minors faceted over gender. For crimes like Larceny, Drug Abuse, Liquor Law violation and Simple Assault, the number of crimes conducted by males significantly higher than those conducted
 by females.
 
 However, in the recent years the number of such crimes among females seem to rise as well as indicated by the thickness of the heatmap on the top left.
@@ -199,7 +200,7 @@ source("R_Scripts/JAR-HeatMap-Race.R")
 Jar_Heatmap_plot()
 ```
 
-The above heatmaps shows us the number of crimes commited by minors from different ethnic and racial backgrounds. We can observe that the highest number of crimes are commited by minors who identify as African Americans or Blacks. This is a quite interesting observation since in the above plots we have seen that the majority of hate crimes by ethnicity bias were against Black Individuals. This gives a sense of inherent "corrective bias" or aggrevation in young individuals as a response to the hate crimes commited against their community over the years.
+The above heatmaps shows us the number of crimes committed by minors from different ethnic and racial backgrounds. We can observe that the highest number of crimes are committed by minors who identify as African Americans or Blacks. This is a quite interesting observation since in the above plots we have seen that the majority of hate crimes by ethnicity bias were against Black Individuals. This gives a sense of inherent "corrective bias" or aggravation in young individuals as a response to the hate crimes committed against their community over the years.
 
 ## Top Juvenille Crimes by Gender
 
@@ -208,7 +209,7 @@ source("R_Scripts/JAR-RadarGraphs.R")
 JarGenderRadar()
 ```
 
-The above Radar charts give us a better spatial outlook of the number of crimes (top 5) commited by minors belonging to a particular gender.
+The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular gender.
 
 ## Top Juvenille Crimes by Race
 
@@ -217,7 +218,7 @@ source("R_Scripts/JAR-RadarGraphs-Race.R")
 JarRadarRace()
 ```
 
-The above Radar charts give us a better spatial outlook of the number of crimes (top 5) commited by minors belonging to a particular race.
+The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular race.
 
 ```{r}
 source("R_Scripts/GVA-Animation.R")
