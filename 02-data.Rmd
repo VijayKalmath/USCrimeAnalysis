@@ -2,25 +2,25 @@
 
 For this project we have drawn data from multiple sources which have archives of the homicides over the last decade and are maintained by different wings of the US government's security agencies
 
-## UCR Hate Crime Data
+## Juvenile Crime Data:
 
-- Link: [FBI UCR Hate Crime](https://ucr.fbi.gov/hate-crime)
-- Overview: The data was segregated according to the hate crimes observed each year. Furthermore, for every annual report the data was split across 14 spreadsheets according to the following order:
+- Link: [Office of Juvenille Justice and Deliquency Prevention](https://www.ojjdp.gov/ojstatbb/crime/jar.asp)
 
-```
-|-2019 (or any year)
-  |- Table 1: Record of incidents,offenses,victims and known offenders according to bias motivation
-  |- Table 2: Record of incidents,offenses,victims and known offenders according to offense type
-  |- Table 3: Record of offenses, known offender’s race and ethnicity according to offense Type
-  |- Table 4: Record of offenses, type of offense according to bias motivation
-  |- Table 5: Record of offenses, known offender’s race and ethnicity according to bias motivation
-  |- Table 6: Record of offenses, victim type according to type of offense
-  |- Table 7: Record of victims, types of offenses according to bias motivation
-  |- Table 8: Record of incidents, type of victim according to Bias Motivation
-  |- Table 9: Record of known offenders, known offender’s Race, ethnicity, and age
-  |- Table 10: Record of incidents, bias motivation according to location
-  |- Table 11: Record of offenses, type of offense according to state and fedral
-```
+- Overview: The data was a present in a single spreadsheet which had yearly records of felony done by individuals under 18 for the last 30 years classified according to the following categories:
+  - Murder
+  - Rape
+  - Robbery
+  - Aggravated Assault
+  - Burglary
+  - Lareceny
+  - Motor vehicle theft
+  - Arson
+  - Drug Abuse
+  - Vandalism
+  - Possession of weapons
+  - Driving under influence
+  - Liquor Abuse and Drunkedness
+  - Curfew and loitering
 
 ## Gun Violence Data
 
@@ -48,22 +48,22 @@ For this project we have drawn data from multiple sources which have archives of
 |    |- 2020-2021
 ```
 
-## Juvenile Crime Data:
+## UCR Hate Crime Data
 
-- Link: [Office of Juvenille Justice and Deliquency Prevention](https://www.ojjdp.gov/ojstatbb/crime/jar.asp)
+- Link: [FBI UCR Hate Crime](https://ucr.fbi.gov/hate-crime)
+- Overview: The data was segregated according to the hate crimes observed each year. Furthermore, for every annual report the data was split across 14 spreadsheets according to the following order:
 
-- Overview: The data was a present in a single spreadsheet which had yearly records of felony done by individuals under 18 for the last 30 years classified according to the following categories:
-  - Murder
-  - Rape
-  - Robbery
-  - Aggravated Assault
-  - Burglary
-  - Lareceny
-  - Motor vehicle theft
-  - Arson
-  - Drug Abuse
-  - Vandalism
-  - Possession of weapons
-  - Driving under influence
-  - Liquor Abuse and Drunkedness
-  - Curfew and loitering
+```
+|-2019 (or any year)
+  |- Table 1: Record of incidents,offenses,victims and known offenders according to bias motivation
+  |- Table 2: Record of incidents,offenses,victims and known offenders according to offense type
+  |- Table 3: Record of offenses, known offender’s race and ethnicity according to offense Type
+  |- Table 4: Record of offenses, type of offense according to bias motivation
+  |- Table 5: Record of offenses, known offender’s race and ethnicity according to bias motivation
+  |- Table 6: Record of offenses, victim type according to type of offense
+  |- Table 7: Record of victims, types of offenses according to bias motivation
+  |- Table 8: Record of incidents, type of victim according to Bias Motivation
+  |- Table 9: Record of known offenders, known offender’s Race, ethnicity, and age
+  |- Table 10: Record of incidents, bias motivation according to location
+  |- Table 11: Record of offenses, type of offense according to state and fedral
+```
