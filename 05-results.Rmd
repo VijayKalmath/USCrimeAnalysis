@@ -82,6 +82,8 @@ We can observe from the above time series data, that the total number of hate cr
 >
 > [NYT Article on the rise of hate crime violene during Trump Administration](https://www.nytimes.com/2019/11/12/us/hate-crimes-fbi-report.html)
 
+Another striking observation is the sudden drop in crime against property (i.e vandalism) during the Trump Administration.
+
 ```{r type}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
 df2 <- df[-c(1,2, 8,15, 16), ]
@@ -95,6 +97,10 @@ df2 %>%
   annotate("text", x = 9, y = 3000, label = "Trump elected", size =3)+
   ggtitle("Incidents vs Years (by Types of Crime)")
 ```
+
+In the above time series plot of the rates of different types of crimes over the last decade,we can see that instaces of Simple Status have remained the almost the same showing some evidence for an inherent presence of bias to harm others based on an identity within a portion of the population. This can be looked upon as a social issue that needs large scale reformation of how people percieve others in general and changes in education might help to mitigate it.
+
+Furthermore, we can see that there is a sharp rise in robbery motivated by some kind of bias after 2018 (during Trump Administration).
 
 ```{r age}
 df <- read_csv("data/processed/ucr/annual_offenders_by_age.csv",show_col_types = FALSE)
@@ -145,7 +151,7 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 
 ### Adding my Plots (Vijay)
 
-JAR BoxPlot 
+JAR BoxPlot
 
 ```{r, fig.width=15}
 source("R_Scripts/JAR-BoxPlots-Race.R")
@@ -153,11 +159,11 @@ source("R_Scripts/JAR-BoxPlots-Race.R")
 JarBoxPlots_RacePLot()
 
 ```
+
 ```{r, fig.width=15,}
 source("R_Scripts/JAR-BoxPlots.R")
 JarBoxPlots()
 ```
-
 
 ```{r, fig.width=10}
 source("R_Scripts/JAR-HeatMap-Gender.R")
