@@ -221,12 +221,5 @@ source("R_Scripts/Table8Script.R")
 HCtable8_plot()
 ```
 
-```{r}
-source("R_Scripts/Table10-A.R")
-HCtable10_HeatMap()
-```
 
-```{r}
-source("R_Scripts/Table10.R")
-HCtable10_plot()
-```
+
