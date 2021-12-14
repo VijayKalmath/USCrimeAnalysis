@@ -168,10 +168,14 @@ It can be inferred that over the last decade a bias towards Black individuals ha
 
 JAR BoxPlot
 
-```{r, fig.width=15,fig.height=30}
+```{r, fig.width=15,fig.height=14}
 source("R_Scripts/JAR-BoxPlots-Race.R")
 JarBoxPlots_RacePLot()
 ```
+
+From the above plots we can see the various crimes which are high for a particular demographic. Here we focus on the types crimes committed by offenders of different races. We can see that larceny-theft is the most common type of offense for all demographics. However, other type of offenses are not similar for every demographic. 
+We can see that White and African American population have more spread in Drug Abuse violations than American Indian and Asian people. This indicates a rise in drug abuse in these communities. While drug abuse is common in American Indians, the spread is not high, indicating that annual incidents are similar throughout the years. Liquor Law violations are also more in number of American Indians as compared to White and African American population which have higher Simple Assaults and Disorderly conducts.
+
 
 ```{r, fig.width=15,}
 source("R_Scripts/JAR-BoxPlots.R")
