@@ -8,7 +8,7 @@
 
 The world around us has been knit into a global village due to the rapid advancements in various areas of science and technology over the last two decades. As we continue to take large leaps in progressing as a civilization, a raising concern is the rise in criminal activities around the world. As more people gain access to express their opinions and make their own choices in every aspect of their life, there seems to be a polarization in the population which sows seeds for acts of violence against other individuals who may not conform to their identities. Furthermore, the ease of access to weapons or lack of sufficient surveillance goes hand-in-hand with intent of malice and intolerance among individuals. Although, one might argue that acts of felony existed throughout human history, it is paramount to observe, analyse and take measures to curb/prevent it in the current era as the consequences (if not controlled) could be so detrimental that it could draw us back as a civilization.
 
-## HATE CRIME
+## A brief about hate crime
 
 Although, the definition for hate crime continuous to evolve, we can understand it as "a prejudice motivated offense which takes place when a perpetrator targets a victim due to the latter's association or perceived association with a certain social group, sexual/gender identity or race demographic.
 
@@ -53,3 +53,11 @@ In this project, we strive to draw insights from homicides records of the United
 - [x] Draw correlation between social/political events and rise/fall in crime rate
 - [x] Interactive Component using D3.js
 - [x] Final Conclusions
+
+## Team
+
+## Our Team👨🏫:
+
+| <img src = "https://avatars2.githubusercontent.com/u/46641503?v=4" width = 500 height = 250> | <img src = "https://avatars.githubusercontent.com/u/20517962?v=4" width = 500 height = 250> | <img src = "https://avatars.githubusercontent.com/u/40157710?v=4" width = 500 height = 250> |
+| :------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------: |
+|                     [Smaranjit Ghose](https://github.com/smaranjitghose)                     |                      [Vijay Kalmath](https://github.com/VijayKalmath)                       |                          [Soham Joshi](https://github.com/sjoshi5)                          |
