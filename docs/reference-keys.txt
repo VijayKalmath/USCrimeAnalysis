@@ -44,3 +44,10 @@ juvenile-arrest-records
 juvenille-crimes-spread-over-the-years
 juvenille-crimes-heatmap-by-gender
 juvenille-crimes-heatmap-by-race
+juvenile-crimes-spread-over-the-years
+juvenile-crimes-heatmap-by-gender
+juvenile-crimes-heatmap-by-race
+top-juvenile-crimes-by-gender
+top-juvenile-crimes-by-race
+gun-violence-arhive
+mass-shootings-i-top-10-states

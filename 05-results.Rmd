@@ -22,13 +22,14 @@ source("R_Scripts/readJar.R")
 source("R_Scripts/readGVA.R")
 ```
 
-### Juvenille Crimes Spread Over the Years
+### Juvenile Crimes Spread Over the Years
 
 ```{r, fig.width=15,}
 source("R_Scripts/JAR-BoxPlots.R")
 JarBoxPlots()
 ```
-It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
+We can analyze incidents of various types of crime by gender. From this we can infer the most frequent crimes committed by Males and Females. While Simple Assault, Larceny-Theft and Loitering are frequent for both demographics, Males have higher number and spread for Drug Abuse violations and Burglaries while women have more spread in Liquor Law violations and Disorderly Conduct. 
+Higher spreads can be seen for crimes like Larceny-Theft and Running away, which indicates a huge change during the 10 years. However spreads for more serious crimes like aggravated assaults is lower, indicating that the numbers have not changed much through the years. While we can see this change, we cannot see when it was high/low.
 
 ```{r, fig.width=15,fig.height=14}
 source("R_Scripts/JAR-BoxPlots-Race.R")
@@ -39,7 +40,7 @@ From the above plots we can see the various crimes which are high for a particul
 We can see that White and African American population have more spread in Drug Abuse violations than American Indian and Asian people. This indicates a rise in drug abuse in these communities. While drug abuse is common in American Indians, the spread is not high, indicating that annual incidents are similar throughout the years. Liquor Law violations are also more in number of American Indians as compared to White and African American population which have higher Simple Assaults and Disorderly conducts.
 
 
-### Juvenille Crimes HeatMap by Gender
+### Juvenile Crimes HeatMap by Gender
 
 ```{r, fig.width=10}
 source("R_Scripts/JAR-HeatMap-Gender.R")
@@ -53,7 +54,7 @@ However, in the recent years the number of such crimes among females seem to ris
 
 The number of instances of offenses of arson, driving under influence are approximately the same over the years for both the genders.
 
-### Juvenille Crimes HeatMap by Race
+### Juvenile Crimes HeatMap by Race
 
 ```{r, fig.width=10}
 source("R_Scripts/JAR-HeatMap-Race.R")
@@ -62,7 +63,7 @@ Jar_Heatmap_plot()
 
 The above heatmaps shows us the number of crimes committed by minors from different ethnic and racial backgrounds. We can observe that the highest number of crimes are committed by minors who identify as African Americans or Blacks. This is a quite interesting observation since in the above plots we have seen that the majority of hate crimes by ethnicity bias were against Black Individuals. This gives a sense of inherent "corrective bias" or aggravation in young individuals as a response to the hate crimes committed against their community over the years.
 
-### Top Juvenille Crimes by Gender
+### Top Juvenile Crimes by Gender
 
 ```{r,fig.width=9}
 source("R_Scripts/JAR-RadarGraphs.R")
@@ -71,7 +72,7 @@ JarGenderRadar()
 
 The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular gender.
 
-### Top Juvenille Crimes by Race
+### Top Juvenile Crimes by Race
 
 ```{r,fig.width=9}
 source("R_Scripts/JAR-RadarGraphs-Race.R")
@@ -80,12 +81,15 @@ JarRadarRace()
 
 The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular race.
 
+## Gun Violence Arhive
 
+### Mass Shootings i Top 10 States
 
 ```{r}
 source("R_Scripts/GVA-ParallelPlot.R")
 GVA_ParallelPlot()
 ```
+The clear outlier for this plot can be seen in 2017 for the state of Nevada, when the 2017 Las Vegas Stephen Paddock Mass shooting took place. We can see a general increasing trend in all the states with higher increase in Illinois from 2018-2020.
 
 ```{r}
 source("R_Scripts/GVA-Animation.R")
@@ -248,3 +252,5 @@ It can be inferred that over the last decade a bias towards Black individuals ha
 source("R_Scripts/Table8Script.R")
 HCtable8_plot()
 ```
+
+In the above plot we can see the proportions of incidents of biased hate crime against certain victims. We can see that Gender Identity, Sexual Orientation and Race are higher against individuals and lower against religious organisations. Religious organisation obviously have more crimes motivated by religious bias. Financial Organisations and Public Violations are also more due to bias against Gender, Race and Religion
