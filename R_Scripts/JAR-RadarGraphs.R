@@ -47,7 +47,7 @@ pcol=colors_border , pfcol=colors_in , plwd=2 , plty=1,
 #custom the grid
 cglcol="grey", cglty=1, axislabcol="grey", caxislabels=seq(0,20,5), cglwd=0.8,
 #custom labels
-vlcex=0.8,title=paste("Top 5 Offenses by Gender (Radarchart)"), 
+vlcex=0.8,title=paste("Top 5 Offenses by Gender"), 
 )
 legend(x=2, y=1, legend = rownames(as.matrix(JarGendertop6)[-c(1,2),]), bty = "n", pch=20 , col=colors_in , text.col = "grey", cex=.8, pt.cex=2)
 
