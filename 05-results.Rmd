@@ -91,9 +91,11 @@ The above Radar charts give us a better spatial outlook of the number of crimes 
 source("R_Scripts/GVA-ParallelPlot.R")
 GVA_ParallelPlot()
 ```
+
+
 The clear outlier for this plot can be seen in 2017 for the state of Nevada, when the 2017 Las Vegas Stephen Paddock Mass shooting took place. We can see a general increasing trend in all the states with higher increase in Illinois from 2018-2020.
 
-### Montly Mass Shootings in Top  States.
+### Montly Mass Shootings in Top States.
 
 ```{r}
 source("R_Scripts/GVA-Animation.R")
@@ -263,7 +265,7 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
 
 ### Hate Crime by Bias towards Victim Type
-
+  
 
 ```{r,fig.width=9}
 source("R_Scripts/Table8Script.R")

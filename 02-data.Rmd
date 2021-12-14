@@ -2,7 +2,7 @@
 
 For this project we have drawn data from multiple sources which have archives of the homicides over the last decade and are maintained by different wings of the US government's security agencies
 
-## Juvenile Crime Data:
+## Juvenile Crime Data
 
 - Link: [Office of Juvenille Justice and Deliquency Prevention](https://www.ojjdp.gov/ojstatbb/crime/jar.asp)
 
