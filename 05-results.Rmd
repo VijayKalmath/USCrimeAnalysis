@@ -197,23 +197,27 @@ The number of instances of offenses of arson, driving under influence are approx
 ```{r, fig.width=10}
 source("R_Scripts/JAR-HeatMap-Race.R")
 Jar_Heatmap_plot()
+```
 
 The above heatmaps shows us the number of crimes commited by minors from different ethnic and racial backgrounds. We can observe that the highest number of crimes are commited by minors who identify as African Americans or Blacks. This is a quite interesting observation since in the above plots we have seen that the majority of hate crimes by ethnicity bias were against Black Individuals. This gives a sense of inherent "corrective bias" or aggrevation in young individuals as a response to the hate crimes commited against their community over the years.
 
+## Top Juvenille Crimes by Gender
 
-
-
+```{r,fig.width=9}
+source("R_Scripts/JAR-RadarGraphs.R")
+JarGenderRadar()
 ```
+
+The above Radar charts give us a better spatial outlook of the number of crimes (top 5) commited by minors belonging to a particular gender.
+
+## Top Juvenille Crimes by Race
 
 ```{r,fig.width=9}
 source("R_Scripts/JAR-RadarGraphs-Race.R")
 JarRadarRace()
 ```
 
-```{r,fig.width=9}
-source("R_Scripts/JAR-RadarGraphs.R")
-JarGenderRadar()
-```
+The above Radar charts give us a better spatial outlook of the number of crimes (top 5) commited by minors belonging to a particular race.
 
 ```{r}
 source("R_Scripts/GVA-Animation.R")
