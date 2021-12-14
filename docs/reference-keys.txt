@@ -34,3 +34,9 @@ interactive-component
 conclusion
 limitations
 scope-of-work
+juvenille-crimes
+juvenille-crimes-by-gender
+juvenille-crimes-by-race
+top-juvenille-crimes-by-gender
+top-juvenille-crimes-by-race
+major-events-and-unreported-crimes

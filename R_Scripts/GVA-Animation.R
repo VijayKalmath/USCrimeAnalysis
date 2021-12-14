@@ -27,13 +27,13 @@ Gmdf <- Gmdf %>% filter(State %in% c("California","Florida","Illinois","Louisian
 
 Gmdf <- Gmdf %>% filter(Month %in% c("Jan","Feb","Mar","Jun","Jul","Aug","Oct","Nov","Dec"))
   
-ggplot(Gmdf, aes(x=InjuredCount/10000, y=fct_reorder(State,InjuredCount,max), fill=State)) + 
+ggplot(Gmdf, aes(x=InjuredCount/1000, y=fct_reorder(State,InjuredCount,max), fill=State)) + 
   geom_bar(stat='identity') +
   facet_grid(~Month, scales = "free_y") + 
   theme_bw() +
   theme(legend.position='none') + 
   labs(title = "Number of Injuries per Month for top 6 States in Year {closest_state}") +
-  xlab("Number of Injured in Tens of thousands ")+
+  xlab("Number of Injured in Thousands ")+
   ylab("States")+
   transition_states(Year,wrap=FALSE) +
   ease_aes('linear')
