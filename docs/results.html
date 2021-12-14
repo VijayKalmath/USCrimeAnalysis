@@ -81,16 +81,20 @@
 </ul></li>
 <li class="chapter" data-level="2" data-path="data-sources.html"><a href="data-sources.html"><i class="fa fa-check"></i><b>2</b> Data Sources</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#ucr-hate-crime-data"><i class="fa fa-check"></i><b>2.1</b> UCR Hate Crime Data</a></li>
+<li class="chapter" data-level="2.1" data-path="data-sources.html"><a href="data-sources.html#juvenile-crime-data"><i class="fa fa-check"></i><b>2.1</b> Juvenile Crime Data:</a></li>
 <li class="chapter" data-level="2.2" data-path="data-sources.html"><a href="data-sources.html#gun-violence-data"><i class="fa fa-check"></i><b>2.2</b> Gun Violence Data</a></li>
-<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#j"><i class="fa fa-check"></i><b>2.3</b> J</a></li>
+<li class="chapter" data-level="2.3" data-path="data-sources.html"><a href="data-sources.html#ucr-hate-crime-data"><i class="fa fa-check"></i><b>2.3</b> UCR Hate Crime Data</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#juvenile-arrest-records-jar"><i class="fa fa-check"></i><b>3.1</b> Juvenile Arrest Records (JAR)</a></li>
-<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#gun-violence-data-1"><i class="fa fa-check"></i><b>3.2</b> Gun Violence Data</a>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#juvenile-arrest-records-jar"><i class="fa fa-check"></i><b>3.1</b> Juvenile Arrest Records (JAR)</a>
 <ul>
-<li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#mass-shootings"><i class="fa fa-check"></i><b>3.2.1</b> Mass Shootings</a></li>
+<li class="chapter" data-level="3.1.1" data-path="data-transformation.html"><a href="data-transformation.html#juvenile-crimes-by-gender-of-offender"><i class="fa fa-check"></i><b>3.1.1</b> Juvenile Crimes by Gender of Offender:</a></li>
+<li class="chapter" data-level="3.1.2" data-path="data-transformation.html"><a href="data-transformation.html#juvenile-crimes-by-race-of-offender"><i class="fa fa-check"></i><b>3.1.2</b> Juvenile Crimes by Race of Offender:</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#gun-violence-data-1"><i class="fa fa-check"></i><b>3.2</b> Gun Violence Data:</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#mass-shootings"><i class="fa fa-check"></i><b>3.2.1</b> Mass Shootings:</a></li>
 <li class="chapter" data-level="3.2.2" data-path="data-transformation.html"><a href="data-transformation.html#accidental-deaths-and-injuries"><i class="fa fa-check"></i><b>3.2.2</b> Accidental Deaths and Injuries</a></li>
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#fbi-uniform-crime-reporting-ucr"><i class="fa fa-check"></i><b>3.3</b> FBI: Uniform Crime Reporting (UCR)</a>
@@ -112,7 +116,11 @@
 </ul></li>
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
-<li class="chapter" data-level="5.0.1" data-path="results.html"><a href="results.html#adding-my-plots-vijay"><i class="fa fa-check"></i><b>5.0.1</b> Adding my Plots (Vijay)</a></li>
+<li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#most-frequent-places-for-hatecrime"><i class="fa fa-check"></i><b>5.1</b> Most frequent places for hatecrime</a></li>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#rate-of-crimes-over-the-years"><i class="fa fa-check"></i><b>5.2</b> Rate of Crimes over the years</a>
+<ul>
+<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#adding-my-plots-vijay"><i class="fa fa-check"></i><b>5.2.1</b> Adding my Plots (Vijay)</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
 <li class="chapter" data-level="7" data-path="conclusion.html"><a href="conclusion.html"><i class="fa fa-check"></i><b>7</b> Conclusion</a>
@@ -141,29 +149,63 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
-<p><img src="us_crime_analysis_files/figure-html/cleveland-1.png" width="672" />
-<img src="us_crime_analysis_files/figure-html/type-1.png" width="672" />
-<img src="us_crime_analysis_files/figure-html/sumtype-1.png" width="672" /></p>
+<div id="most-frequent-places-for-hatecrime" class="section level2" number="5.1">
+<h2><span class="header-section-number">5.1</span> Most frequent places for hatecrime</h2>
+<p><img src="us_crime_analysis_files/figure-html/cleveland-1.png" width="672" /></p>
+<p>We use a Cleaveland dot plot for finding out the places where a hate crime happens more frequently. This can helps us understand if it’s just the unavailablity of sufficient survilleance or any other motivation that makes these location more prone to such crimes. Thus we can take measures to strengthen the public security in these places.</p>
+<p>We can observe that the top 4 spots for hate motivated crimes are:</p>
+<ul>
+<li>Residental Areas</li>
+<li>Roads</li>
+<li>Schools</li>
+<li>Parking Lots</li>
+</ul>
+<p>The number of crimes observed in these areas over the last decade far outweigh the incidents observed in other locations such has hotels or grocery store.</p>
+<p>Residential areas being the most frequent spots can let us to the assumption that a large portion of these crimes are committed by individuals due to thier bias towards particular people rather than a group perhaps due to the ease of attacking small number rather than going for a large riot.</p>
+<p>The presence of schools/colleges corroborates our concerns of the rise of intolerance in the youth especially the teenagers who tend to be easily carried away by agendas propagated on social media platforms like Twitter, Facebook or Instagram.</p>
+<blockquote>
+<p>Recent Instance:</p>
+<ul>
+<li><a href="https://apnews.com/article/oxford-high-school-shooting-shootings-michigan-school-shootings-9bc485fb234a873d0d1fcc99bab6379f">2021 Michigan School Shooting</a></li>
+</ul>
+</blockquote>
+<p>The existence of large number of such crimes in parking spots/garage might suggest that there is a lack of sufficient security or survelliance for these areas usually spread across several acres or on the secluded portions of a building/store might need some reinforcement.</p>
+<blockquote>
+<p>Recent Instance:</p>
+<ul>
+<li><a href="https://www.nbcbayarea.com/news/local/east-bay/shooting-in-hayward-parking-lot/2753592/">Hayward Parking Lot Shooting</a></li>
+</ul>
+</blockquote>
+</div>
+<div id="rate-of-crimes-over-the-years" class="section level2" number="5.2">
+<h2><span class="header-section-number">5.2</span> Rate of Crimes over the years</h2>
+<p><img src="us_crime_analysis_files/figure-html/sumtype-1.png" width="672" /></p>
+<p>We can observe from the above time series data, that the total number of hate crimes were on a decline till 2013 (i.e President Obama’s second run for office). However it started rising again significantly from 2016 especially leading to a sharp increase (much more than what was observed in the previous decade) by 2017. This was the time during which Donald Trump Jr. was running for the office of US President. This insight might suggest a correlation between the change of political behaviour of the administration and the number of occurances of hate crimes.</p>
+<blockquote>
+<p>Recent Instance:</p>
+<p><a href="https://www.nytimes.com/2019/11/12/us/hate-crimes-fbi-report.html">NYT Article on the rise of hate crime violene during Trump Administration</a></p>
+</blockquote>
+<p><img src="us_crime_analysis_files/figure-html/type-1.png" width="672" /></p>
 <p><img src="us_crime_analysis_files/figure-html/age-1.png" width="672" /></p>
 <p><img src="us_crime_analysis_files/figure-html/amfm-1.png" width="672" /></p>
 <p><img src="us_crime_analysis_files/figure-html/grouped-1.png" width="672" /></p>
-<div id="adding-my-plots-vijay" class="section level3" number="5.0.1">
-<h3><span class="header-section-number">5.0.1</span> Adding my Plots (Vijay)</h3>
+<div id="adding-my-plots-vijay" class="section level3" number="5.2.1">
+<h3><span class="header-section-number">5.2.1</span> Adding my Plots (Vijay)</h3>
 <p>JAR BoxPlot</p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" />
-<img src="us_crime_analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
-<pre><code>## NULL</code></pre>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<pre><code>## NULL</code></pre>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-3-1.png" width="1440" />
+<img src="us_crime_analysis_files/figure-html/unnamed-chunk-4-1.png" width="1440" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-7-1.png" width="864" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-8-1.png" width="864" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-9-1.gif" /><!-- --></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-11-1.gif" /><!-- --></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
 <p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<pre><code>## NULL</code></pre>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-14-1.gif" /><!-- --></p>
 
+</div>
 </div>
 </div>
             </section>

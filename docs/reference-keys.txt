@@ -31,3 +31,7 @@ scope-of-work
 hate-crime-data-by-offense
 adding-my-plots-vijay
 juvenile-crime-data
+juvenile-crimes-by-gender-of-offender
+juvenile-crimes-by-race-of-offender
+most-frequent-places-for-hatecrime
+rate-of-crimes-over-the-years
