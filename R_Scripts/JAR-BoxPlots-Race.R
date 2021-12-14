@@ -32,7 +32,7 @@ A <- merge(A,tdf)
 
 JRWhiteplot <- ggplot(white, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
-  theme(text = element_text(size = 20),plot.title = element_text(size=15)) +
+  theme(text = element_text(size = 20),plot.title = element_text(size=12)) +
   ggtitle("Spread of White Arrestees for Offenses in Year 2000 - 2019")+
   xlab("Type of Offense")+
   ylab("Incidents")+
@@ -40,7 +40,7 @@ JRWhiteplot <- ggplot(white, aes(x=reorder(Offense,OffenseValue,median), y=Offen
 
 JRAAplot <- ggplot(aa, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
-  theme(text = element_text(size = 20),plot.title = element_text(size=15)) +
+  theme(text = element_text(size = 20),plot.title = element_text(size=12)) +
   ggtitle("African American")+
   ggtitle("Spread of African American for Offenses in Year 2000 - 2019")+
   ylab("Incidents")+
@@ -48,7 +48,7 @@ JRAAplot <- ggplot(aa, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValu
 
 JRAIplot <- ggplot(ai, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
-  theme(text = element_text(size = 20),plot.title = element_text(size=15)) +
+  theme(text = element_text(size = 20),plot.title = element_text(size=12)) +
   ggtitle("Spread of American Indian Arrestees for Offenses in Year 2000 - 2019")+
   xlab("Type of Offense")+
   ylab("Incidents")+
@@ -56,7 +56,7 @@ JRAIplot <- ggplot(ai, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValu
 
 JRAplot <- ggplot(A, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
-  theme(text = element_text(size = 20),plot.title = element_text(size=15)) +
+  theme(text = element_text(size = 20),plot.title = element_text(size=12)) +
   xlab("Type of Offense")+
   ylab("Incidents")+
   ggtitle("Spread of Asian Arrestees for Offenses in Year 2000 - 2019")+
