@@ -51,3 +51,12 @@ top-juvenile-crimes-by-gender
 top-juvenile-crimes-by-race
 gun-violence-arhive
 mass-shootings-i-top-10-states
+juvenile-crimes-spread-over-the-years-by-gender
+juvenile-crimes-spread-over-the-years-by-race
+mass-shootings-in-top-10-states
+montly-mass-shootings-in-top-states.
+spatial-representation-of-mass-shootings-density.
+fbi-hatecrime-uniform-crime-reporting.
+hate-crime-by-bias-towards-victim-type
+ambiguous-and-false-bias
+no-indications-of-after-effects

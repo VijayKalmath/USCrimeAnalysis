@@ -26,7 +26,7 @@ ggplot(Jdf) +
   geom_tile(aes(x=Year, y=fct_reorder(Offense,prop), fill= prop)) +
   scale_fill_distiller(palette = "YlOrBr",direction = 1) +
   facet_wrap(~ Race)+
-  ggtitle("Type of Offense by Year Heatmap (by Gender and Incidents)")+
+  ggtitle("Type of Offense by Year Heatmap (by RAce and Incidents)")+
   ylab("Type of Offense")+
   xlab("Incidents")
 }

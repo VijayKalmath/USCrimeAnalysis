@@ -22,7 +22,7 @@ source("R_Scripts/readJar.R")
 source("R_Scripts/readGVA.R")
 ```
 
-### Juvenile Crimes Spread Over the Years
+### Juvenile Crimes Spread Over the Years by Gender
 
 ```{r, fig.width=15,}
 source("R_Scripts/JAR-BoxPlots.R")
@@ -30,6 +30,8 @@ JarBoxPlots()
 ```
 We can analyze incidents of various types of crime by gender. From this we can infer the most frequent crimes committed by Males and Females. While Simple Assault, Larceny-Theft and Loitering are frequent for both demographics, Males have higher number and spread for Drug Abuse violations and Burglaries while women have more spread in Liquor Law violations and Disorderly Conduct. 
 Higher spreads can be seen for crimes like Larceny-Theft and Running away, which indicates a huge change during the 10 years. However spreads for more serious crimes like aggravated assaults is lower, indicating that the numbers have not changed much through the years. While we can see this change, we cannot see when it was high/low.
+
+### Juvenile Crimes Spread Over the Years by Race
 
 ```{r, fig.width=15,fig.height=14}
 source("R_Scripts/JAR-BoxPlots-Race.R")
@@ -83,7 +85,7 @@ The above Radar charts give us a better spatial outlook of the number of crimes 
 
 ## Gun Violence Arhive
 
-### Mass Shootings i Top 10 States
+### Mass Shootings in Top 10 States
 
 ```{r}
 source("R_Scripts/GVA-ParallelPlot.R")
@@ -91,19 +93,32 @@ GVA_ParallelPlot()
 ```
 The clear outlier for this plot can be seen in 2017 for the state of Nevada, when the 2017 Las Vegas Stephen Paddock Mass shooting took place. We can see a general increasing trend in all the states with higher increase in Illinois from 2018-2020.
 
+### Montly Mass Shootings in Top  States.
+
 ```{r}
 source("R_Scripts/GVA-Animation.R")
 GVA_Animation()
-
 ```
+
+In the graph above , we are looking at the rate of increase in injuries between years in the top Months , we can see that there is a clear jump in most of the states between the years 2018 - 2021. 
+
+The animation helps in highlighting this difference and showcasing that the there is indeed an unprecedented amount increase in number of MassShootings in America over the last few users due to Covid and its implications.
+
+Furthermore it is interesting to see that there is decrease of injuries between the years 2016 and 2017.
+
+### Spatial representation of Mass Shootings Density.
+
 
 ```{r}
 source("R_Scripts/US-StateMapPlot.R")
 GunViolenceStateMap()
 ```
 
+The given maps show the  changing density of Mass shootings across the States over the last few years.
 
-## Most frequent places for hatecrime
+## FBI HateCrime Uniform Crime Reporting.
+
+### Most frequent places for hatecrime
 
 ```{r cleveland}
 df <- read_csv("data/processed/ucr/annual_hc_count_by_place.csv",show_col_types = FALSE)
@@ -143,7 +158,7 @@ The existence of large number of such crimes in parking spots/garage might sugge
 >
 > - [Hayward Parking Lot Shooting](https://www.nbcbayarea.com/news/local/east-bay/shooting-in-hayward-parking-lot/2753592/)
 
-## Rate of Crimes over the years
+### Rate of Crimes over the years
 
 ```{r sumtype}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
@@ -185,7 +200,7 @@ In the above time series plot of the rates of different types of crimes over the
 
 Furthermore, we can see that there is a sharp rise in robbery motivated by some kind of bias after 2018 (during Trump Administration) while the instances of vandalism took a sharp decline.
 
-## Hate Crime Offenders by age
+### Hate Crime Offenders by age
 
 ```{r age}
 df <- read_csv("data/processed/ucr/annual_offenders_by_age.csv",show_col_types = FALSE)
@@ -201,7 +216,7 @@ From the above stacked bar plots, we can infer that the number of hate crimes co
 
 Although the number of hate crime offenses by minors remain low compared to the number of hate crimes committed by adults, there is a gradual increase in the numbers which was also hinted by rise in number of hate crimes observed in schools/colleges in the first graph.
 
-## Hate Crime by Bias towards a gender
+### Hate Crime by Bias towards a gender
 
 ```{r amfm}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
@@ -223,7 +238,7 @@ From the above plot, we can infer that in general, the crimes committed against 
 
 However between 2017-2019, we can see a significant rise in hate crimes against men. This may not be purely due to their identification as a male but have additional correlation to their sexual orientation (perhaps a rise in homophobia).
 
-## Hate Crime by Bias towards a particular ethnicity
+### Hate Crime by Bias towards a particular ethnicity
 
 ```{r grouped}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
@@ -246,6 +261,8 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 ```
 
 It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
+
+### Hate Crime by Bias towards Victim Type
 
 
 ```{r,fig.width=9}
