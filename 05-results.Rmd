@@ -20,24 +20,51 @@ source("R_Scripts/readJar.R")
 source("R_Scripts/readGVA.R")
 ```
 
+## Most frequent places for hatecrime
 
 ```{r cleveland}
 df <- read_csv("data/processed/ucr/annual_hc_count_by_place.csv",show_col_types = FALSE)
 df$min <- apply(df[2:11], MARGIN =  1, FUN = min, na.rm = T)
 df$max <- apply(df[2:11], MARGIN =  1, FUN = max, na.rm = T)
 #df$Total <- rowSums(df[ , c(2,3,4,5,6,7,8,9,10,11)], na.rm=TRUE)
-filter(df, Place != "Other/unknown") %>% mutate(Place = fct_reorder(Place, max, .desc = FALSE)) %>% ggplot() +  geom_point(aes(min, Place, color = "Min")) + 
+filter(df, Place != "Other/unknown") %>% mutate(Place = fct_reorder(Place, max, .desc = FALSE)) %>% ggplot() +  geom_point(aes(min, Place, color = "Min")) +
   geom_point(aes(max, Place, color = "Max")) +
   theme(plot.title = element_text(hjust = 0.5), axis.line = element_line(colour = "black"))+
   ggtitle("Maximum and Minimum Incidents w.r.t. Location")+
-  xlab('Incidents') + 
-  ylab('Location') 
+  xlab('Incidents') +
+  ylab('Location')
 ```
+
+We use a Cleaveland dot plot for finding out the places where a hate crime happens more frequently. This can helps us understand if it's just the unavailablity of sufficient survilleance or any other motivation that makes these location more prone to such crimes. Thus we can take measures to strengthen the public security in these places.
+
+We can observe that the top 4 spots for hate motivated crimes are:
+
+- Residental Areas
+- Roads
+- Schools
+- Parking Lots
+
+The number of crimes observed in these areas over the last decade far outweigh the incidents observed in other locations such has hotels or grocery store.
+
+Residential areas being the most frequent spots can let us to the assumption that a large portion of these crimes are committed by individuals due to thier bias towards particular people rather than a group perhaps due to the ease of attacking small number rather than going for a large riot.
+
+The presence of schools/colleges corroborates our concerns of the rise of intolerance in the youth especially the teenagers who tend to be easily carried away by agendas propagated on social media platforms like Twitter, Facebook or Instagram.
+
+> Recent Instance:
+>
+> - [2021 Michigan School Shooting](https://apnews.com/article/oxford-high-school-shooting-shootings-michigan-school-shootings-9bc485fb234a873d0d1fcc99bab6379f)
+
+The existence of large number of such crimes in parking spots/garage might suggest that there is a lack of sufficient security or survelliance for these areas usually spread across several acres or on the secluded portions of a building/store might need some reinforcement.
+
+> Recent Instance:
+>
+> - [Hayward Parking Lot Shooting](https://www.nbcbayarea.com/news/local/east-bay/shooting-in-hayward-parking-lot/2753592/)
+
 ```{r type}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
 df2 <- df[-c(1,2, 8,15, 16), ]
-df2 %>% 
-  pivot_longer(., -Crime, values_to = "Incidents", names_to = "Year") %>% 
+df2 %>%
+  pivot_longer(., -Crime, values_to = "Incidents", names_to = "Year") %>%
   ggplot(., aes(x=Year, y=Incidents, group=Crime)) +
   geom_line(aes(color=Crime)) + geom_point(size =0.5) +
   geom_vline(xintercept = 8, size =0.5, color = 'brown3')+
@@ -45,14 +72,15 @@ df2 %>%
   annotate("text", x = 2.8, y = 3000, label = "Obama Re-elected", size =3)+
   annotate("text", x = 9, y = 3000, label = "Trump elected", size =3)+
   ggtitle("Incidents vs Years (by Types of Crime)")
-  
+
 
 ```
+
 ```{r sumtype}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
 df2 <- df[c(1,2, 8, 16), ]
-df2 %>% 
-  pivot_longer(., -Crime, values_to = "Incidents", names_to = "Year") %>% 
+df2 %>%
+  pivot_longer(., -Crime, values_to = "Incidents", names_to = "Year") %>%
   ggplot(., aes(x=Year, y=Incidents, group=Crime)) +
   geom_line(aes(color=Crime)) + geom_point(size =0.5) +
   geom_vline(xintercept = 8, size =0.5, color = 'brown3')+
@@ -66,9 +94,9 @@ df2 %>%
 ```{r age}
 df <- read_csv("data/processed/ucr/annual_offenders_by_age.csv",show_col_types = FALSE)
 df2 <- subset(df,select = -c(2,3,4))
-df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year") 
+df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year")
 
-ggplot(df2, aes(fill=`Age Category`, y=Incidents, x=Year)) + 
+ggplot(df2, aes(fill=`Age Category`, y=Incidents, x=Year)) +
     geom_bar(position="dodge", stat="identity")+
     ggtitle("Incidents through Years w.r.t Age Category")
 ```
@@ -78,18 +106,17 @@ df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df2 <- filter(df, `Bias motivation` %in% c("Anti-Male","Anti-Female"))
 
 #df2 <- subset(df,select = -c(2,3,4))
-#df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year") 
+#df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year")
 #df2
 ggplot(df2, aes(x = Year, fill = `Bias motivation`,
                  y = ifelse(test = `Bias motivation` == "Anti-Male",
-                           yes = -Incidents, no = Incidents))) + 
+                           yes = -Incidents, no = Incidents))) +
   geom_bar(stat = "identity", width = 0.5) +
  scale_y_continuous(labels = abs, limits = max(df2$Incidents) * c(-1,1)) +
   coord_flip()+ylab("Anti-Male v Anti Female") +xlab("Year") +
    scale_x_continuous(breaks = c(2013, 2014,2015,2016,2017,2018,2019))+
    ggtitle("Anti-Male vs Anti-Female Incidents through Years")
 ```
-
 
 ```{r grouped}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
@@ -102,9 +129,9 @@ df2 <- filter(df, `Bias motivation` %in% c("Anti-White","Anti-Black","Anti-Black
 
 #
 #df2 <- subset(df2,select = -c(3))
-#df2 <-pivot_wider(df2, values_from = "Incidents", names_from = "Year") 
+#df2 <-pivot_wider(df2, values_from = "Incidents", names_from = "Year")
 
-ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) + 
+ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
     geom_bar(position="dodge", stat="identity")+
      scale_x_continuous(breaks = c(2010,2011,2012,2013, 2014,2015,2016,2017,2018,2019))+
   ggtitle("Incidents through years w.r.t Race-Bias")
@@ -113,7 +140,7 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 
 ### Adding my Plots (Vijay)
 
-JAR BoxPlot 
+JAR BoxPlot
 
 ```{r}
 source("R_Scripts/JAR-BoxPlots-Race.R")
@@ -121,6 +148,7 @@ source("R_Scripts/JAR-BoxPlots-Race.R")
 JarBoxPlots_RacePLot()
 
 ```
+
 ```{r}
 source("R_Scripts/JAR-BoxPlots.R")
 JarBoxPlots()
@@ -167,7 +195,6 @@ source("R_Scripts/US-StateMapPlot.R")
 GunViolenceStateMap()
 ```
 
-
 ```{r}
 source("R_Scripts/Table8Script.R")
 HCtable8_plot()
@@ -182,6 +209,3 @@ HCtable10_HeatMap()
 source("R_Scripts/Table10.R")
 HCtable10_plot()
 ```
-
-
-
