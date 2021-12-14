@@ -15,6 +15,7 @@ HC8df <- HC8df[,-2]
 HC8df <- HC8df %>% filter(Biasmotivation != "Total" ) %>% filter(Biasmotivation != "Single-Bias Incidents" )
 
 
+colnames(HC8df) <- c("Biasmotivation","Individual","FinancialOrgs","Government","ReligiousOrgs","Public","Other","Year")
 ggparcoord(HC8df,columns = 2:7, groupColumn = 1,splineFactor = 2.0,
            scale="uniminmax",
            showPoints = TRUE, 
