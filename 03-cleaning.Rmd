@@ -9,122 +9,121 @@ library(kableExtra)
 ```
 
 ## Juvenile Arrest Records (JAR)
-The JAR data set is a combined file of collated Juvenile arrest records by different aspects of race gender for years 1980 - 2019. We split this data according to gender and race. Due to the volume of the data we restrict our time frame to years 2000 - 2019.
 
-Split by Gender:
+For our analysis of juvenille crimes, we sliced the given records into two datafames
+
+### Juvenile Crimes by Gender of Offender:
+
 ```{R}
 source("R_Scripts/readJar.R")
 JuvenileList = readJar()
-
 df1 = data.frame(JuvenileList[2])
-
-
 df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
 
-Split by Race:
+### Juvenile Crimes by Race of Offender:
+
 ```{R}
 
 
 df1 = data.frame(JuvenileList[3])
 df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
 
-## Gun Violence Data
+## Gun Violence Data:
 
-### Mass Shootings
-For the Gun violence data, we had a consolidated data set for years 2018-2021 and separate data for every year from 2014 to 2017. We combine this data according to years
+For our analysis, we transformed the given tables to have the data in the following dataframes:
+
+### Mass Shootings:
+
+- Joined the tables for the years 2014-2017 and the consolidated table for 2018-2021
+
 ```{R}
 df1 <- read_csv("data/processed/GVA/MassShootingTotalYears.csv",show_col_types = FALSE)
 df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
 
 ### Accidental Deaths and Injuries
+
 We combine 3 data sets which have counts corresponding to Children, Teens and Adults as follows:
 
 Accidental deaths:
+
 ```{R}
 df1 <- read_csv("data/processed/GVA/Accidental_DeathsAll.csv",show_col_types = FALSE)
 df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
 
 Accidental Injuries:
+
 ```{R}
 df1 <- read_csv("data/processed/GVA/Accidental_InjuriesAll.csv",show_col_types = FALSE)
 df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
-
-
-
 
 ## FBI: Uniform Crime Reporting (UCR)
 
-The UCR data set consisted of year wise data of crime counts. The data was reported with respect to various parameters such as the cause of the crime, type of crime and also various demographics of victims and offenders. This was consolidated over 14 tables depending on the parameters. We selected 6 out of the 14 tables to analyse and visualize the crimes in the country during 2010-2019. 
-For every year from 2010 - 2019, the source had a set of all tables with the following data:
-
-1. Incidents, Offense, Victims and Known Offenders by Bias Motivation
-2. Incidents, Offense, Victims and Known Offenders by Offense Type
-3. Offenders, Offenses and Race/Ethnicity by Offense Type
-4. Offenders and Race/Ethnicity by Age
-5. Incident and Bias Motivation by Location
-6. Offenses and Type of Offenses by State
-
-Through these 6 tables we extract enough information to comment about certain trends of crime in the country based on geographic location, demographics of the offenders and demographics of the offenses. Since all the data is distributed over 10 years, we can also compare changes to important events.
+In this we look at the record from 2010 to 2019 and transform them into the follownig data grames for our analysis:
 
 ### Hate Crime by Bias
+
 We use the Incidents, Offense, Victims and Known Offenders by Bias Motivation data from 2010 to 2019. Since the two main statistics are the number of incidents and number of victims we only consider those over 10 years. We now get long form data structure with Bias type, Incidents, Victims and Year
 
 ```{R}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "900px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "900px", height = "300px")
 ```
 
 ### Hate Crime by Offense Type
-Similarly we have data which  categorized by offense type instead of Bias. Here we can store two separate data tables for incidents and victims, since some types of offenses do not involve victims. (Or are against property and/or society)
+
+Similarly we have data which categorized by offense type instead of Bias. Here we can store two separate data tables for incidents and victims, since some types of offenses do not involve victims. (Or are against property and/or society)
 
 Incidents: Crime and Years
+
 ```{R}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Incidents.csv",show_col_types = FALSE)
 df %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = T) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = T) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
+
 Victims: Crime and Years
+
 ```{R}
 df1 <- read_csv("data/processed/ucr/FBI_UCR_TABLE2_Victims.csv",show_col_types = FALSE)
 df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
 
 ### Hate Crime by State
+
 ```{R}
 df1 <- read_csv("data/processed/ucr/annual_hc_by_state.csv",show_col_types = FALSE)
 df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
+  kable(escape = F) %>%
+  kable_styling("striped", font_size = 9, full_width = F) %>%
+  scroll_box(width = "500px", height = "300px")
 ```
 
-Similarly we also aggregate the other data for the other sources.
-
+All the code used for the data cleaning can be found here: [scripts](https://github.com/VijayKalmath/USCrimeAnalysis/tree/main/src) and [notebooks](https://github.com/VijayKalmath/USCrimeAnalysis/tree/main/notebooks)
