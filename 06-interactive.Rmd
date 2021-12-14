@@ -3,11 +3,12 @@
 For the interactive component, we create a Sunburst chart to summarize our data through the years.
 The radial sunburst is divided among 3 main data models:
 
-1. **Gun Violence**: Number of deaths from 2010-2019
-2. **Reported Offenses**: Number of Crimes reported from 2010-2019. This can be explored by:
+1. **Juvenile Arrests**: Number of Juvenile Arrests made by Race Demographics from 2010-2019
+2. **Gun Violence**: Number of deaths from 2010-2019
+3. **Reported Offenses**: Number of Crimes reported from 2010-2019. This can be explored by:
     + Number of Incidents by State
     + Number of Incidents by Offense Types
-3. **Juvenile Arrests**: Number of Juvenile Arrests made by Race Demographics from 2010-2019
+
 
 We can thus, visualize the changing number throughout the years.
 

@@ -8,6 +8,70 @@ library(kableExtra)
 
 ```
 
+## Juvenile Arrest Records (JAR)
+The JAR data set is a combined file of collated Juvenile arrest records by different aspects of race gender for years 1980 - 2019. We split this data according to gender and race. Due to the volume of the data we restrict our time frame to years 2000 - 2019.
+
+Split by Gender:
+```{R}
+source("R_Scripts/readJar.R")
+JuvenileList = readJar()
+
+df1 = data.frame(JuvenileList[2])
+
+
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+Split by Race:
+```{R}
+
+
+df1 = data.frame(JuvenileList[3])
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+## Gun Violence Data
+
+### Mass Shootings
+For the Gun violence data, we had a consolidated data set for years 2018-2021 and separate data for every year from 2014 to 2017. We combine this data according to years
+```{R}
+df1 <- read_csv("data/processed/GVA/MassShootingTotalYears.csv",show_col_types = FALSE)
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+### Accidental Deaths and Injuries
+We combine 3 data sets which have counts corresponding to Children, Teens and Adults as follows:
+
+Accidental deaths:
+```{R}
+df1 <- read_csv("data/processed/GVA/Accidental_DeathsAll.csv",show_col_types = FALSE)
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+Accidental Injuries:
+```{R}
+df1 <- read_csv("data/processed/GVA/Accidental_InjuriesAll.csv",show_col_types = FALSE)
+df1 %>%
+  kable(escape = F) %>% 
+  kable_styling("striped", font_size = 9, full_width = F) %>% 
+  scroll_box(width = "500px", height = "300px") 
+```
+
+
+
+
 ## FBI: Uniform Crime Reporting (UCR)
 
 The UCR data set consisted of year wise data of crime counts. The data was reported with respect to various parameters such as the cause of the crime, type of crime and also various demographics of victims and offenders. This was consolidated over 14 tables depending on the parameters. We selected 6 out of the 14 tables to analyse and visualize the crimes in the country during 2010-2019. 
@@ -63,65 +127,4 @@ df1 %>%
 ```
 
 Similarly we also aggregate the other data for the other sources.
-
-## Gun Violence Data
-
-### Mass Shootings
-For the Gun violence data, we had a consolidated data set for years 2018-2021 and separate data for every year from 2014 to 2017. We combine this data according to years
-```{R}
-df1 <- read_csv("data/processed/GVA/MassShootingTotalYears.csv",show_col_types = FALSE)
-df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
-```
-
-### Accidental Deaths and Injuries
-We combine 3 data sets which have counts corresponding to Children, Teens and Adults as follows:
-
-Accidental deaths:
-```{R}
-df1 <- read_csv("data/processed/GVA/Accidental_DeathsAll.csv",show_col_types = FALSE)
-df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
-```
-
-Accidental Injuries:
-```{R}
-df1 <- read_csv("data/processed/GVA/Accidental_InjuriesAll.csv",show_col_types = FALSE)
-df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
-```
-
-## Juvenile Arrest Records (JAR)
-The JAR data set is a combined file of collated Juvenile arrest records by different aspects of race gender for years 1980 - 2019. We split this data according to gender and race. Due to the volume of the data we restrict our time frame to years 2000 - 2019.
-
-Split by Gender:
-```{R}
-source("R_Scripts/readJar.R")
-JuvenileList = readJar()
-
-df1 = data.frame(JuvenileList[2])
-
-
-df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
-```
-
-Split by Race:
-```{R}
-
-
-df1 = data.frame(JuvenileList[3])
-df1 %>%
-  kable(escape = F) %>% 
-  kable_styling("striped", font_size = 9, full_width = F) %>% 
-  scroll_box(width = "500px", height = "300px") 
-```
 
