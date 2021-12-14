@@ -168,7 +168,7 @@ It can be inferred that over the last decade a bias towards Black individuals ha
 
 JAR BoxPlot
 
-```{r, fig.width=15}
+```{r, fig.width=15,fig.height=30}
 source("R_Scripts/JAR-BoxPlots-Race.R")
 JarBoxPlots_RacePLot()
 ```
