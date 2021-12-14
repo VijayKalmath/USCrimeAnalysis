@@ -1,6 +1,5 @@
 HCtable8_plot <- function() {
 
-# UCR Table 8 
 library(fmsb)
 library(hrbrthemes)
 library(GGally)
@@ -16,19 +15,18 @@ HC8df <- HC8df[,-2]
 HC8df <- HC8df %>% filter(Biasmotivation != "Total" ) %>% filter(Biasmotivation != "Single-Bias Incidents" )
 
 
-
-ggparcoord(HC8df,columns = 2:7, groupColumn = 1,splineFactor = 6.0,
+ggparcoord(HC8df,columns = 2:7, groupColumn = 1,splineFactor = 2.0,
            scale="uniminmax",
            showPoints = TRUE, 
-           title = "No scaling",
+           title = "Incidents wrt Victim Type by BiasMotivation ",
            alphaLines = 0.6
 ) + 
   scale_color_viridis(discrete=TRUE) +
   theme_ipsum()+
   theme(
-    legend.position="none",
     plot.title = element_text(size=13)
   ) +
-  xlab("")
+  xlab("Victim type for Incidents") + 
+  ylab("Incidents Count")
 
 }

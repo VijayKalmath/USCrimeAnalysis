@@ -164,7 +164,7 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 
 It can be inferred that over the last decade a bias towards Black individuals has been signifantly higher than the hate crimes towards other races. Although this necessarirly does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
 
-### Adding my Plots (Vijay)
+
 
 JAR BoxPlot
 
