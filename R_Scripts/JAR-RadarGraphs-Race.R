@@ -25,7 +25,7 @@ JAAdf <- JAAdf %>% group_by(Offense) %>% summarize(MeanValue = mean(OffenseValue
 JAIdf <- JAIdf %>% group_by(Offense) %>% summarize(MeanValue = mean(OffenseValue))
 JAdf <- JAdf %>% group_by(Offense) %>% summarize(MeanValue = mean(OffenseValue))
 
-JarRacetop6 <- Jdf %>% top_n(6,MeanValue)
+JarRacetop6 <- Jdf %>% arrange(desc(MeanValue)) %>% top_n(6,MeanValue)
 
 JarWhtop6 <- merge(JarRacetop6,JWhdf,by="Offense")
 JarWhtop6["MeanValue"] <- JarWhtop6["MeanValue.y"]

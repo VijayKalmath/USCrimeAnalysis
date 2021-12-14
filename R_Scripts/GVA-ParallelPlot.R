@@ -27,11 +27,11 @@ Gmdf$Year <- format(Gmdf$IncidentDate, format = "%Y")
 Gmdf$Month <-format(Gmdf$IncidentDate, format = "%b")
 
 
-top_10_statesddf <- Gddf  %>% group_by(State) %>% summarise(InjuredCount  = sum(Injured)) %>% ungroup() %>% top_n(10,InjuredCount)
+top_10_statesddf <- Gddf  %>% group_by(State) %>% summarise(InjuredCount  = sum(Injured)) %>% ungroup() %>% arrange(desc(InjuredCount)) %>% top_n(10,InjuredCount)
 
-top_10_statesidf <- Gidf  %>% group_by(State) %>% summarise(InjuredCount  = sum(Injured)) %>% ungroup() %>% top_n(10,InjuredCount)
+top_10_statesidf <- Gidf  %>% group_by(State) %>% summarise(InjuredCount  = sum(Injured)) %>% ungroup() %>% arrange(desc(InjuredCount)) %>% top_n(10,InjuredCount)
 
-top_10_statesmdf <- Gmdf  %>% group_by(State) %>% summarise(InjuredCount  = sum(Injured)) %>% ungroup() %>% top_n(10,InjuredCount)
+top_10_statesmdf <- Gmdf  %>% group_by(State) %>% summarise(InjuredCount  = sum(Injured)) %>% ungroup() %>% arrange(desc(InjuredCount)) %>% top_n(10,InjuredCount)
 
 Gidf %>% filter(Age != "Adult") %>% group_by(Year,Age) %>% summarise(InjuredCount  = sum(Injured)) %>% pivot_wider(names_from = Year,values_from = InjuredCount) %>% 
   ggparcoord(columns = 2:8, 

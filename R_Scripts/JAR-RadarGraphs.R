@@ -20,7 +20,7 @@ Jdf <- Jdf %>% group_by(Offense) %>% summarize(MeanValue = mean(OffenseValue))
 JMendf <- JMendf %>% group_by(Offense) %>% summarize(MeanValue = mean(OffenseValue))
 JFemaledf <- JFemaledf %>% group_by(Offense) %>% summarize(MeanValue = mean(OffenseValue))
 
-JarGendertop6 <- Jdf %>% top_n(6,MeanValue)
+JarGendertop6 <- Jdf %>% arrange(desc(MeanValue)) %>% top_n(6,MeanValue)
 
 JarMentop6 <- merge(JarGendertop6,JMendf,by="Offense")
 JarMentop6["MeanValue"] <- JarMentop6["MeanValue.y"]
