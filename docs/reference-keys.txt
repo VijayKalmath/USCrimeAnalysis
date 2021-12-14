@@ -40,3 +40,7 @@ juvenille-crimes-by-race
 top-juvenille-crimes-by-gender
 top-juvenille-crimes-by-race
 major-events-and-unreported-crimes
+juvenile-arrest-records
+juvenille-crimes-spread-over-the-years
+juvenille-crimes-heatmap-by-gender
+juvenille-crimes-heatmap-by-race

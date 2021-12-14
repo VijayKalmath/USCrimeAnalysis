@@ -1,5 +1,7 @@
 # Results
 
+## Juvenile Arrest Records
+
 ```{r}
 # Import All Necessary Libraries
 library(tidyverse)
@@ -19,6 +21,83 @@ source("R_Scripts/plot_missing.R")
 source("R_Scripts/readJar.R")
 source("R_Scripts/readGVA.R")
 ```
+
+### Juvenille Crimes Spread Over the Years
+
+```{r, fig.width=15,}
+source("R_Scripts/JAR-BoxPlots.R")
+JarBoxPlots()
+```
+It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
+
+```{r, fig.width=15,fig.height=14}
+source("R_Scripts/JAR-BoxPlots-Race.R")
+JarBoxPlots_RacePLot()
+```
+
+From the above plots we can see the various crimes which are high for a particular demographic. Here we focus on the types crimes committed by offenders of different races. We can see that larceny-theft is the most common type of offense for all demographics. However, other type of offenses are not similar for every demographic. 
+We can see that White and African American population have more spread in Drug Abuse violations than American Indian and Asian people. This indicates a rise in drug abuse in these communities. While drug abuse is common in American Indians, the spread is not high, indicating that annual incidents are similar throughout the years. Liquor Law violations are also more in number of American Indians as compared to White and African American population which have higher Simple Assaults and Disorderly conducts.
+
+
+### Juvenille Crimes HeatMap by Gender
+
+```{r, fig.width=10}
+source("R_Scripts/JAR-HeatMap-Gender.R")
+JarHeatMap_GenderPlot()
+```
+
+From the above heatmap we can analyse the various categories of crimes committed by minors faceted over gender. For crimes like Larceny, Drug Abuse, Liquor Law violation and Simple Assault, the number of crimes conducted by males significantly higher than those conducted
+by females.
+
+However, in the recent years the number of such crimes among females seem to rise as well as indicated by the thickness of the heatmap on the top left.
+
+The number of instances of offenses of arson, driving under influence are approximately the same over the years for both the genders.
+
+### Juvenille Crimes HeatMap by Race
+
+```{r, fig.width=10}
+source("R_Scripts/JAR-HeatMap-Race.R")
+Jar_Heatmap_plot()
+```
+
+The above heatmaps shows us the number of crimes committed by minors from different ethnic and racial backgrounds. We can observe that the highest number of crimes are committed by minors who identify as African Americans or Blacks. This is a quite interesting observation since in the above plots we have seen that the majority of hate crimes by ethnicity bias were against Black Individuals. This gives a sense of inherent "corrective bias" or aggravation in young individuals as a response to the hate crimes committed against their community over the years.
+
+### Top Juvenille Crimes by Gender
+
+```{r,fig.width=9}
+source("R_Scripts/JAR-RadarGraphs.R")
+JarGenderRadar()
+```
+
+The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular gender.
+
+### Top Juvenille Crimes by Race
+
+```{r,fig.width=9}
+source("R_Scripts/JAR-RadarGraphs-Race.R")
+JarRadarRace()
+```
+
+The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular race.
+
+
+
+```{r}
+source("R_Scripts/GVA-ParallelPlot.R")
+GVA_ParallelPlot()
+```
+
+```{r}
+source("R_Scripts/GVA-Animation.R")
+GVA_Animation()
+
+```
+
+```{r}
+source("R_Scripts/US-StateMapPlot.R")
+GunViolenceStateMap()
+```
+
 
 ## Most frequent places for hatecrime
 
@@ -164,81 +243,6 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
 
 It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
 
-## Juvenille Crimes
-
-JAR BoxPlot
-
-```{r, fig.width=15,fig.height=14}
-source("R_Scripts/JAR-BoxPlots-Race.R")
-JarBoxPlots_RacePLot()
-```
-
-From the above plots we can see the various crimes which are high for a particular demographic. Here we focus on the types crimes committed by offenders of different races. We can see that larceny-theft is the most common type of offense for all demographics. However, other type of offenses are not similar for every demographic. 
-We can see that White and African American population have more spread in Drug Abuse violations than American Indian and Asian people. This indicates a rise in drug abuse in these communities. While drug abuse is common in American Indians, the spread is not high, indicating that annual incidents are similar throughout the years. Liquor Law violations are also more in number of American Indians as compared to White and African American population which have higher Simple Assaults and Disorderly conducts.
-
-
-```{r, fig.width=15,}
-source("R_Scripts/JAR-BoxPlots.R")
-JarBoxPlots()
-```
-It can be inferred that over the last decade a bias towards Black individuals has been significantly higher than the hate crimes towards other races. Although this necessarily does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
-
-## Juvenille Crimes by Gender
-
-```{r, fig.width=10}
-source("R_Scripts/JAR-HeatMap-Gender.R")
-JarHeatMap_GenderPlot()
-```
-
-From the above heatmap we can analyse the various categories of crimes committed by minors faceted over gender. For crimes like Larceny, Drug Abuse, Liquor Law violation and Simple Assault, the number of crimes conducted by males significantly higher than those conducted
-by females.
-
-However, in the recent years the number of such crimes among females seem to rise as well as indicated by the thickness of the heatmap on the top left.
-
-The number of instances of offenses of arson, driving under influence are approximately the same over the years for both the genders.
-
-## Juvenille Crimes by Race
-
-```{r, fig.width=10}
-source("R_Scripts/JAR-HeatMap-Race.R")
-Jar_Heatmap_plot()
-```
-
-The above heatmaps shows us the number of crimes committed by minors from different ethnic and racial backgrounds. We can observe that the highest number of crimes are committed by minors who identify as African Americans or Blacks. This is a quite interesting observation since in the above plots we have seen that the majority of hate crimes by ethnicity bias were against Black Individuals. This gives a sense of inherent "corrective bias" or aggravation in young individuals as a response to the hate crimes committed against their community over the years.
-
-## Top Juvenille Crimes by Gender
-
-```{r,fig.width=9}
-source("R_Scripts/JAR-RadarGraphs.R")
-JarGenderRadar()
-```
-
-The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular gender.
-
-## Top Juvenille Crimes by Race
-
-```{r,fig.width=9}
-source("R_Scripts/JAR-RadarGraphs-Race.R")
-JarRadarRace()
-```
-
-The above Radar charts give us a better spatial outlook of the number of crimes (top 5) committed by minors belonging to a particular race.
-
-```{r}
-source("R_Scripts/GVA-Animation.R")
-GVA_Animation()
-
-```
-
-```{r}
-source("R_Scripts/GVA-ParallelPlot.R")
-GVA_ParallelPlot()
-```
-
-```{r}
-source("R_Scripts/US-StateMapPlot.R")
-GunViolenceStateMap()
-```
 
 ```{r,fig.width=9}
 source("R_Scripts/Table8Script.R")
