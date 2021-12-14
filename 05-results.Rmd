@@ -10,6 +10,9 @@ library(RColorBrewer)
 library(Lock5withR)
 library(naniar)
 library(ggplot2)
+library(ggplot2)
+library(gganimate)
+
 
 # Import Helper Libraries
 source("R_Scripts/plot_missing.R")
@@ -114,8 +117,7 @@ JarBoxPlots_RacePLot()
 ```
 ```{r}
 source("R_Scripts/JAR-BoxPlots.R")
-
-JarBoxPlots_RacePLot()
+JarBoxPlots()
 ```
 
 ```{r}
@@ -155,6 +157,12 @@ GVA_ParallelPlot()
 ```
 
 ```{r}
+source("R_Scripts/US-StateMapPlot.R")
+GunViolenceStateMap()
+```
+
+
+```{r}
 source("R_Scripts/Table8Script.R")
 HCtable8_plot()
 ```
@@ -167,11 +175,6 @@ HCtable10_HeatMap()
 ```{r}
 source("R_Scripts/Table10.R")
 HCtable10_plot()
-```
-
-```{r}
-source("R_Scripts/US-StateMapPlot.R")
-GunViolenceStateMap()
 ```
 
 

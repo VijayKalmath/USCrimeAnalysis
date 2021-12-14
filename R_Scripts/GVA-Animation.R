@@ -1,9 +1,5 @@
 GVA_Animation <- function() {
-# Charge libraries:
-library(ggplot2)
-library(gganimate)
-
-
+  
 source("R_Scripts/readGVA.R")
 
 

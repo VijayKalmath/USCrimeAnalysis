@@ -28,14 +28,11 @@ Gmdf$year <- as.numeric(Gmdf$year)
 
 
 
-map_with_animation <- plot_usmap(data = Gmdf, values = "injuredcount", color = "black") + 
+plot_usmap(data = Gmdf, values = "injuredcount", color = "black") + 
   scale_fill_continuous(low = "green", high = "red",name = "Population (2015)", label = scales::comma) + 
   theme(legend.position = "right") +
   transition_states(year) +
   ggtitle('Year: {closest_state}')
 
-map_with_animation
-
-anim_save("GVA-MassShootingUSMap.gif")
 
 }
