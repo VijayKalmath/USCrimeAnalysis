@@ -15,8 +15,22 @@ JRdf$Year <- as.numeric(JRdf$Year)
 JRdf[is.na(JRdf)] <- 0
 JRdf <- as.data.frame(JRdf)
 
+tdf <- JRdf %>% group_by(Offense) %>% mutate(OffenseSum = sum(OffenseValue)) %>% ungroup() %>% select(Offense,OffenseSum) %>% unique() %>% arrange(desc(OffenseSum)) %>% top_n(10,OffenseSum)
 
-JRWhiteplot <- ggplot(JRdf %>% filter(Race=="White"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
+white <- JRdf %>% filter(Race=="White")
+white <- merge(white,tdf)
+
+aa <- JRdf %>% filter(Race=="AfricanAmerican")
+aa <- merge(aa,tdf)
+
+ai <- JRdf %>% filter(Race=="AmericanIndian")
+ai <- merge(ai,tdf)
+
+A <- JRdf %>% filter(Race=="Asian")
+A <- merge(A,tdf)
+
+
+JRWhiteplot <- ggplot(white, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
   theme(text = element_text(size = 20)) +
   ggtitle("White")+
@@ -24,7 +38,7 @@ JRWhiteplot <- ggplot(JRdf %>% filter(Race=="White"), aes(x=reorder(Offense,Offe
   ylab("Incidents")+
   coord_flip()
 
-JRAAplot <- ggplot(JRdf %>% filter(Race=="AfricanAmerican"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
+JRAAplot <- ggplot(aa, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
   theme(text = element_text(size = 20)) +
   ggtitle("African American")+
@@ -32,7 +46,7 @@ JRAAplot <- ggplot(JRdf %>% filter(Race=="AfricanAmerican"), aes(x=reorder(Offen
   ylab("Incidents")+
   coord_flip()
 
-JRAIplot <- ggplot(JRdf %>% filter(Race=="AmericanIndian"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
+JRAIplot <- ggplot(ai, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
   theme(text = element_text(size = 20)) +
   ggtitle("American Indian")+
@@ -40,15 +54,13 @@ JRAIplot <- ggplot(JRdf %>% filter(Race=="AmericanIndian"), aes(x=reorder(Offens
   ylab("Incidents")+
   coord_flip()
 
-JRAplot <- ggplot(JRdf %>% filter(Race=="Asian"), aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
+JRAplot <- ggplot(A, aes(x=reorder(Offense,OffenseValue,median), y=OffenseValue) ) +
   geom_boxplot() + 
   theme(text = element_text(size = 20)) +
   xlab("Type of Offense")+
   ylab("Incidents")+
   ggtitle("Asian")+
   coord_flip()
-
-
 
 final_plot <- JRWhiteplot + JRAAplot + JRAIplot + JRAplot
 final_plot
