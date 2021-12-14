@@ -53,6 +53,8 @@
 
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+<script src="libs/kePrint-0.0.1/kePrint.js"></script>
+<link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet" />
 
 
 
@@ -117,9 +119,12 @@
 <li class="chapter" data-level="5" data-path="results.html"><a href="results.html"><i class="fa fa-check"></i><b>5</b> Results</a>
 <ul>
 <li class="chapter" data-level="5.1" data-path="results.html"><a href="results.html#most-frequent-places-for-hatecrime"><i class="fa fa-check"></i><b>5.1</b> Most frequent places for hatecrime</a></li>
-<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#rate-of-crimes-over-the-years"><i class="fa fa-check"></i><b>5.2</b> Rate of Crimes over the years</a>
+<li class="chapter" data-level="5.2" data-path="results.html"><a href="results.html#rate-of-crimes-over-the-years"><i class="fa fa-check"></i><b>5.2</b> Rate of Crimes over the years</a></li>
+<li class="chapter" data-level="5.3" data-path="results.html"><a href="results.html#hate-crime-offenders-by-age"><i class="fa fa-check"></i><b>5.3</b> Hate Crime Offenders by age</a></li>
+<li class="chapter" data-level="5.4" data-path="results.html"><a href="results.html#hate-crime-by-bias-towards-a-gender"><i class="fa fa-check"></i><b>5.4</b> Hate Crime by Bias towards a gender</a></li>
+<li class="chapter" data-level="5.5" data-path="results.html"><a href="results.html#hate-crime-by-bias-towards-a-particular-ethnicity"><i class="fa fa-check"></i><b>5.5</b> Hate Crime by Bias towards a particular ethnicity</a>
 <ul>
-<li class="chapter" data-level="5.2.1" data-path="results.html"><a href="results.html#adding-my-plots-vijay"><i class="fa fa-check"></i><b>5.2.1</b> Adding my Plots (Vijay)</a></li>
+<li class="chapter" data-level="5.5.1" data-path="results.html"><a href="results.html#adding-my-plots-vijay"><i class="fa fa-check"></i><b>5.5.1</b> Adding my Plots (Vijay)</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="interactive-component.html"><a href="interactive-component.html"><i class="fa fa-check"></i><b>6</b> Interactive component</a></li>
@@ -185,25 +190,40 @@
 <p>Recent Instance:</p>
 <p><a href="https://www.nytimes.com/2019/11/12/us/hate-crimes-fbi-report.html">NYT Article on the rise of hate crime violene during Trump Administration</a></p>
 </blockquote>
+<p>Another striking observation is the sudden drop in crime against property (i.e vandalism) during the Trump Administration.</p>
 <p><img src="us_crime_analysis_files/figure-html/type-1.png" width="672" /></p>
+<p>In the above time series plot of the rates of different types of crimes over the last decade,we can see that instaces of Simple Assault have remained the almost the same showing some evidence for an inherent presence of bias to harm others based on an identity within a portion of the population. This can be looked upon as a social issue that needs large scale reformation of how people percieve others in general and changes in education might help to mitigate it.</p>
+<p>Furthermore, we can see that there is a sharp rise in robbery motivated by some kind of bias after 2018 (during Trump Administration) while the instances of vandalism took a sharp decline.</p>
+</div>
+<div id="hate-crime-offenders-by-age" class="section level2" number="5.3">
+<h2><span class="header-section-number">5.3</span> Hate Crime Offenders by age</h2>
 <p><img src="us_crime_analysis_files/figure-html/age-1.png" width="672" /></p>
+<p>From the above stacked bar plots, we can infer that the number of hate crimes commited by adults increased to almost 3 folds between 2013 to 2019.</p>
+<p>Although the number of hate crime offenses by minors remain low compared to the number of hate crimes commited by adults, there is a gradual increase in the numbers which was also hinted by rise in number of hate crimes obsereved in schools/colleges in the first graph.</p>
+</div>
+<div id="hate-crime-by-bias-towards-a-gender" class="section level2" number="5.4">
+<h2><span class="header-section-number">5.4</span> Hate Crime by Bias towards a gender</h2>
 <p><img src="us_crime_analysis_files/figure-html/amfm-1.png" width="672" /></p>
+<p>From the above plot, we can infer that in general, the crimes commited against women due to a bias are much larger in number compared to hate crime commited against women.</p>
+<p>However between 2017-2019, we can see a significant rise in hate crimes against men. This may not be purely due to their identification as a male but have additonal correlation to their sexual orientation (perhaps a rise in homophobia).</p>
+</div>
+<div id="hate-crime-by-bias-towards-a-particular-ethnicity" class="section level2" number="5.5">
+<h2><span class="header-section-number">5.5</span> Hate Crime by Bias towards a particular ethnicity</h2>
 <p><img src="us_crime_analysis_files/figure-html/grouped-1.png" width="672" /></p>
-<div id="adding-my-plots-vijay" class="section level3" number="5.2.1">
-<h3><span class="header-section-number">5.2.1</span> Adding my Plots (Vijay)</h3>
+<p>It can be inferred that over the last decade a bias towards Black individuals has been signifantly higher than the hate crimes towards other races. Although this necessarirly does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.</p>
+<div id="adding-my-plots-vijay" class="section level3" number="5.5.1">
+<h3><span class="header-section-number">5.5.1</span> Adding my Plots (Vijay)</h3>
 <p>JAR BoxPlot</p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-3-1.png" width="1440" />
-<img src="us_crime_analysis_files/figure-html/unnamed-chunk-4-1.png" width="1440" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-5-1.png" width="960" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-1.png" width="960" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-7-1.png" width="864" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-8-1.png" width="864" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-9-1.gif" /><!-- --></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-11-1.gif" /><!-- --></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-14-1.gif" /><!-- --></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-33-1.png" width="1440" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-34-1.png" width="1440" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-35-1.png" width="960" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-36-1.png" width="960" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-37-1.png" width="864" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-38-1.png" width="864" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-39-1.gif" /><!-- --></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-40-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-41-1.gif" /><!-- --></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-42-1.png" width="672" /></p>
 
 </div>
 </div>
