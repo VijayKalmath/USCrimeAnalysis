@@ -87,18 +87,18 @@
 </ul></li>
 <li class="chapter" data-level="3" data-path="data-transformation.html"><a href="data-transformation.html"><i class="fa fa-check"></i><b>3</b> Data transformation</a>
 <ul>
-<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#fbi-uniform-crime-reporting-ucr"><i class="fa fa-check"></i><b>3.1</b> FBI: Uniform Crime Reporting (UCR)</a>
-<ul>
-<li class="chapter" data-level="3.1.1" data-path="data-transformation.html"><a href="data-transformation.html#hate-crime-by-bias"><i class="fa fa-check"></i><b>3.1.1</b> Hate Crime by Bias</a></li>
-<li class="chapter" data-level="3.1.2" data-path="data-transformation.html"><a href="data-transformation.html#hate-crime-by-offense-type"><i class="fa fa-check"></i><b>3.1.2</b> Hate Crime by Offense Type</a></li>
-<li class="chapter" data-level="3.1.3" data-path="data-transformation.html"><a href="data-transformation.html#hate-crime-by-state"><i class="fa fa-check"></i><b>3.1.3</b> Hate Crime by State</a></li>
-</ul></li>
+<li class="chapter" data-level="3.1" data-path="data-transformation.html"><a href="data-transformation.html#juvenile-arrest-records-jar"><i class="fa fa-check"></i><b>3.1</b> Juvenile Arrest Records (JAR)</a></li>
 <li class="chapter" data-level="3.2" data-path="data-transformation.html"><a href="data-transformation.html#gun-violence-data-1"><i class="fa fa-check"></i><b>3.2</b> Gun Violence Data</a>
 <ul>
 <li class="chapter" data-level="3.2.1" data-path="data-transformation.html"><a href="data-transformation.html#mass-shootings"><i class="fa fa-check"></i><b>3.2.1</b> Mass Shootings</a></li>
 <li class="chapter" data-level="3.2.2" data-path="data-transformation.html"><a href="data-transformation.html#accidental-deaths-and-injuries"><i class="fa fa-check"></i><b>3.2.2</b> Accidental Deaths and Injuries</a></li>
 </ul></li>
-<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#juvenile-arrest-records-jar"><i class="fa fa-check"></i><b>3.3</b> Juvenile Arrest Records (JAR)</a></li>
+<li class="chapter" data-level="3.3" data-path="data-transformation.html"><a href="data-transformation.html#fbi-uniform-crime-reporting-ucr"><i class="fa fa-check"></i><b>3.3</b> FBI: Uniform Crime Reporting (UCR)</a>
+<ul>
+<li class="chapter" data-level="3.3.1" data-path="data-transformation.html"><a href="data-transformation.html#hate-crime-by-bias"><i class="fa fa-check"></i><b>3.3.1</b> Hate Crime by Bias</a></li>
+<li class="chapter" data-level="3.3.2" data-path="data-transformation.html"><a href="data-transformation.html#hate-crime-by-offense-type"><i class="fa fa-check"></i><b>3.3.2</b> Hate Crime by Offense Type</a></li>
+<li class="chapter" data-level="3.3.3" data-path="data-transformation.html"><a href="data-transformation.html#hate-crime-by-state"><i class="fa fa-check"></i><b>3.3.3</b> Hate Crime by State</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="missing-values.html"><a href="missing-values.html"><i class="fa fa-check"></i><b>4</b> Missing Values</a>
 <ul>
@@ -141,9 +141,9 @@
             <section class="normal" id="section-">
 <div id="results" class="section level1" number="5">
 <h1><span class="header-section-number">Chapter 5</span> Results</h1>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" />
-<img src="us_crime_analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" />
-<img src="us_crime_analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/cleveland-1.png" width="672" />
+<img src="us_crime_analysis_files/figure-html/type-1.png" width="672" />
+<img src="us_crime_analysis_files/figure-html/sumtype-1.png" width="672" /></p>
 <pre><code>## # A tibble: 14 × 3
 ##    `Age Category`                    Year  Incidents
 ##    &lt;chr&gt;                             &lt;chr&gt;     &lt;dbl&gt;
@@ -161,7 +161,7 @@
 ## 12 Total known offenders under 18    2017        833
 ## 13 Total known offenders under 18    2018        855
 ## 14 Total known offenders under 18    2019        865</code></pre>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/age-1.png" width="672" /></p>
 <pre><code>## # A tibble: 14 × 4
 ##    `Bias motivation` Incidents Victims  Year
 ##    &lt;chr&gt;                 &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -179,7 +179,7 @@
 ## 12 Anti-Female              25      33  2018
 ## 13 Anti-Male                17      18  2019
 ## 14 Anti-Female              52      63  2019</code></pre>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/amfm-1.png" width="672" /></p>
 <pre><code>## # A tibble: 50 × 4
 ##    `Bias motivation`                   Incidents Victims  Year
 ##    &lt;chr&gt;                                   &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;
@@ -208,23 +208,23 @@
 ##  9 Religion                                 1322    1552  2010
 ## 10 Anti-Jewish                               887    1040  2010
 ## # … with 354 more rows</code></pre>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/grouped-1.png" width="672" /></p>
 <div id="adding-my-plots-vijay" class="section level3" number="5.0.1">
 <h3><span class="header-section-number">5.0.1</span> Adding my Plots (Vijay)</h3>
 <p>JAR BoxPlot</p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" />
-<img src="us_crime_analysis_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-3-1.png" width="672" />
+<img src="us_crime_analysis_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<pre><code>## NULL</code></pre>
 <p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<pre><code>## NULL</code></pre>
 <p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
 <p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-16-1.gif" /><!-- --></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-17-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-18-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-19-1.png" width="672" /></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-20-1.gif" /><!-- --></p>
-<p><img src="us_crime_analysis_files/figure-html/unnamed-chunk-21-1.gif" /><!-- --></p>
+<pre><code>## NULL</code></pre>
 
 </div>
 </div>
