@@ -98,9 +98,11 @@ df2 %>%
   ggtitle("Incidents vs Years (by Types of Crime)")
 ```
 
-In the above time series plot of the rates of different types of crimes over the last decade,we can see that instaces of Simple Status have remained the almost the same showing some evidence for an inherent presence of bias to harm others based on an identity within a portion of the population. This can be looked upon as a social issue that needs large scale reformation of how people percieve others in general and changes in education might help to mitigate it.
+In the above time series plot of the rates of different types of crimes over the last decade,we can see that instaces of Simple Assault have remained the almost the same showing some evidence for an inherent presence of bias to harm others based on an identity within a portion of the population. This can be looked upon as a social issue that needs large scale reformation of how people percieve others in general and changes in education might help to mitigate it.
 
-Furthermore, we can see that there is a sharp rise in robbery motivated by some kind of bias after 2018 (during Trump Administration).
+Furthermore, we can see that there is a sharp rise in robbery motivated by some kind of bias after 2018 (during Trump Administration) while the instances of vandalism took a sharp decline.
+
+## Hate Crime Offenders by age
 
 ```{r age}
 df <- read_csv("data/processed/ucr/annual_offenders_by_age.csv",show_col_types = FALSE)
@@ -112,10 +114,15 @@ ggplot(df2, aes(fill=`Age Category`, y=Incidents, x=Year)) +
     ggtitle("Incidents through Years w.r.t Age Category")
 ```
 
+From the above stacked bar plots, we can infer that the number of hate crimes commited by adults increased to almost 3 folds between 2013 to 2019.
+
+Although the number of hate crime offenses by minors remain low compared to the number of hate crimes commited by adults, there is a gradual increase in the numbers which was also hinted by rise in number of hate crimes obsereved in schools/colleges in the first graph.
+
+## Hate Crime by Bias towards a gender
+
 ```{r amfm}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
 df2 <- filter(df, `Bias motivation` %in% c("Anti-Male","Anti-Female"))
-
 #df2 <- subset(df,select = -c(2,3,4))
 #df2 <-pivot_longer(df2, -`Age Category`, values_to = "Incidents", names_to = "Year")
 #df2
@@ -128,6 +135,12 @@ ggplot(df2, aes(x = Year, fill = `Bias motivation`,
    scale_x_continuous(breaks = c(2013, 2014,2015,2016,2017,2018,2019))+
    ggtitle("Anti-Male vs Anti-Female Incidents through Years")
 ```
+
+From the above plot, we can infer that in general, the crimes commited against women due to a bias are much larger in number compared to hate crime commited against women.
+
+However between 2017-2019, we can see a significant rise in hate crimes against men. This may not be purely due to their identification as a male but have additonal correlation to their sexual orientation (perhaps a rise in homophobia).
+
+## Hate Crime by Bias towards a particular ethnicity
 
 ```{r grouped}
 df <- read_csv("data/processed/ucr/FBI_UCR_TABLE1.csv",show_col_types = FALSE)
@@ -148,6 +161,8 @@ ggplot(df2, aes(fill=`Bias motivation`, y=Incidents, x=Year)) +
   ggtitle("Incidents through years w.r.t Race-Bias")
 
 ```
+
+It can be inferred that over the last decade a bias towards Black individuals has been signifantly higher than the hate crimes towards other races. Although this necessarirly does not imply the limited bias towards other races. This has an underlying factor of the portion of the population which is non-white in the US among which the Black Community comprised the largest part.
 
 ### Adding my Plots (Vijay)
 
